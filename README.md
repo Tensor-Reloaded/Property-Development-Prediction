@@ -13,6 +13,7 @@ Using historical Geographic data from satellites, general financial information 
  
 ## 2. Work 
 
+[Documentation](/txt/documents.txt)
 ### 2.1 Laboratory 1
  * Build teams, find research coordinator and identify the theme of the project
 
