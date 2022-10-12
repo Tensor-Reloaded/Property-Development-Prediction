@@ -19,4 +19,4 @@ Using historical Geographic data from satellites, general financial information 
 
 ### 2.2 Laboratory 2
  * Configure Github or Bitbucket or ... and Trello or ... for each project appropriate to master page from which you belong. Use meaningful names for the project and the steps you take. The results for themes from Lab 2 must be added on portal. Specify what everyone does in a separate [file](/txt/lab2/responsibilities) type “.txt”. Also create a file with following information: project name, members names, the coordinator, contact information, etc..
- * On the theme set by the scientific coordinator you make the [state-of-the-art](/txt/lab2/state-of-the-art.txt) (a document (1/2 pages per team member), which to put on GoogleDocs/GitHub/Bitbucket/etc., in English with)
+ * On the theme set by the scientific coordinator you make the [state-of-the-art](https://github.com/Tensor-Reloaded/Property-Development-Prediction/wiki/State-of-the-art) (a document (1/2 pages per team member), which to put on GoogleDocs/GitHub/Bitbucket/etc., in English with)
