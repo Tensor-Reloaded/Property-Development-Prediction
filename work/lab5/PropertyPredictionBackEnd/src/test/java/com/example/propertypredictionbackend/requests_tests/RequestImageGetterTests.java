@@ -3,8 +3,8 @@ package com.example.propertypredictionbackend.requests_tests;
 
 import com.example.propertypredictionbackend.RequestImageGetter;
 import com.example.propertypredictionbackend.RequestPredictionProxy;
-import com.example.propertypredictionbackend.http_predictions.Coordinate;
-import com.example.propertypredictionbackend.http_predictions.PredictionRequest;
+import com.example.propertypredictionbackend.dtos.Coordinate;
+import com.example.propertypredictionbackend.dtos.PredictionRequest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 

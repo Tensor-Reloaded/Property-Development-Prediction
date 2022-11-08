@@ -1,6 +1,6 @@
 package com.example.propertypredictionbackend;
 
-import com.example.propertypredictionbackend.http_predictions.PredictionRequest;
+import com.example.propertypredictionbackend.dtos.PredictionRequest;
 
 import java.lang.reflect.Field;
 

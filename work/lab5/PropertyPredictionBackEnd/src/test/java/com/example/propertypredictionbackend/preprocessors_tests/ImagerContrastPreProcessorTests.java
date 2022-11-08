@@ -3,9 +3,8 @@ package com.example.propertypredictionbackend.preprocessors_tests;
 import com.example.propertypredictionbackend.RequestImageGetter;
 import com.example.propertypredictionbackend.RequestPredictionProxy;
 import com.example.propertypredictionbackend.exceptions.ConvertBase64ImageToBufferedImageException;
-import com.example.propertypredictionbackend.flows.SimplePredictionFlow;
-import com.example.propertypredictionbackend.http_predictions.Coordinate;
-import com.example.propertypredictionbackend.http_predictions.PredictionRequest;
+import com.example.propertypredictionbackend.dtos.Coordinate;
+import com.example.propertypredictionbackend.dtos.PredictionRequest;
 import com.example.propertypredictionbackend.preprocesors.ImageContrastPreProcessor;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessor;
 import com.example.propertypredictionbackend.utils.ImageUtils;
@@ -15,7 +14,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 

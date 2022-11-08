@@ -15,5 +15,7 @@
     <bean id="contrastPreProcessor" class="com.example.propertypredictionbackend.preprocesors.ImageContrastPreProcessor"/>
     <bean id="trackerForContrast" class="aspects.ContrastPreProcessorAspect"/>
 
+    <bean id="imagePreProcessorFactory" class="com.example.propertypredictionbackend.preprocesors.ImagePreProcessorFactory" />
+
     <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"/>
 </beans>

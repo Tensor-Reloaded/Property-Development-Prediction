@@ -1,4 +1,4 @@
-package com.example.propertypredictionbackend.http_predictions;
+package com.example.propertypredictionbackend.dtos;
 
 public class Coordinate {
 

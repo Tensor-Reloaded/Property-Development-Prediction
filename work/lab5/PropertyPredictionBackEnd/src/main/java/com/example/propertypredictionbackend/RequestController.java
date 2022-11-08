@@ -2,20 +2,15 @@ package com.example.propertypredictionbackend;
 
 import com.example.propertypredictionbackend.flows.PredictionFlow;
 import com.example.propertypredictionbackend.flows.SimplePredictionFlow;
-import com.example.propertypredictionbackend.http_predictions.Coordinate;
-import com.example.propertypredictionbackend.http_predictions.PredictionRequest;
-import com.example.propertypredictionbackend.http_predictions.PredictionResponse;
-import com.example.propertypredictionbackend.preprocesors.ImageContrastPreProcessor;
+import com.example.propertypredictionbackend.dtos.Coordinate;
+import com.example.propertypredictionbackend.dtos.PredictionRequest;
+import com.example.propertypredictionbackend.dtos.PredictionResponse;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessor;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessorFactory;
-import com.example.propertypredictionbackend.preprocesors.ImageSizePreProcessor;
-import com.example.propertypredictionbackend.utils.ImageUtils;
+import io.swagger.annotations.Api;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.*;
 import java.net.URL;
@@ -24,8 +19,8 @@ import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import java.util.UUID;
 
-
 @RestController
+@RequestMapping("/api")
 public class RequestController {
 
     private final ResourceBundle bundle;
@@ -44,7 +39,7 @@ public class RequestController {
         }
     }
 
-    @PostMapping(value = "/predictDevelopment", consumes = "application/json")
+    @RequestMapping(value = "/predictDevelopment", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     public PredictionResponse handleImagePredictionRequest(@RequestBody PredictionRequest request) {
         RequestImageGetter adapter = new RequestPredictionProxy(request);
 

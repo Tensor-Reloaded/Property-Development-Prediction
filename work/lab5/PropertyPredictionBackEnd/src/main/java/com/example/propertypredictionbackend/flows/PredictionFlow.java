@@ -1,8 +1,8 @@
 package com.example.propertypredictionbackend.flows;
 
 import com.example.propertypredictionbackend.RequestImageGetter;
-import com.example.propertypredictionbackend.http_predictions.PredictionRequest;
-import com.example.propertypredictionbackend.http_predictions.PredictionResponse;
+import com.example.propertypredictionbackend.dtos.PredictionRequest;
+import com.example.propertypredictionbackend.dtos.PredictionResponse;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessorFactory;
 
 import java.net.URL;
