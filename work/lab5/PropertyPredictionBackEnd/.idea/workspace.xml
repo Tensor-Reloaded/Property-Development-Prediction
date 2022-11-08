@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cb86dffe-930c-41a3-804b-0fc655faf5a1" name="Changes" comment="Implemented simple flow of processing the image.&#10;Configured project to run on AOP (Aspects Oriented Programming).">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Guguhc8Or3bESlPlv5k8Gq1qx0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "G:/Master/ASET/Property-Development-Prediction/work/lab5/PropertyPredictionBackEnd",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Facets",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "f43740eec98316380b2d63d5fb1b6d0d"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Master\ASET\PropertyPredictionBackEnd\src\main\java\com\example\propertypredictionbackend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Master\ASET\Property-Development-Prediction\work\lab5\PropertyPredictionBackEnd\src\main\resources" />
+      <recent name="G:\Master\ASET\Property-Development-Prediction\work\lab5\PropertyPredictionBackEnd\src\test\java\com\example\propertypredictionbackend\preprocessors_tests\test_images" />
+      <recent name="G:\Master\ASET\PropertyPredictionBackEnd\src\test\java\com\example\propertypredictionbackend\preprocessors_tests" />
+      <recent name="G:\Master\ASET\PropertyPredictionBackEnd\src\main\resources" />
+      <recent name="G:\Master\ASET\PropertyPredictionBackEnd\src\test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.PropertyPredictionBackEndApplication">
+    <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="ImageSizePreProcessorTests.testAspect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PropertyPredictionBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.propertypredictionbackend.preprocessors_tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.propertypredictionbackend.preprocessors_tests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.preprocessors_tests.ImageSizePreProcessorTests" />
+      <option name="METHOD_NAME" value="testAspect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImagerContrastPreProcessorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PropertyPredictionBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.propertypredictionbackend.preprocessors_tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.propertypredictionbackend.preprocessors_tests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.preprocessors_tests.ImagerContrastPreProcessorTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImagerContrastPreProcessorTests.testAspect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PropertyPredictionBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.propertypredictionbackend.preprocessors_tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.propertypredictionbackend.preprocessors_tests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.preprocessors_tests.ImagerContrastPreProcessorTests" />
+      <option name="METHOD_NAME" value="testAspect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImagerContrastPreProcessorTests.testContrastSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PropertyPredictionBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.propertypredictionbackend.preprocessors_tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.propertypredictionbackend.preprocessors_tests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.preprocessors_tests.ImagerContrastPreProcessorTests" />
+      <option name="METHOD_NAME" value="testContrastSuccessful" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PropertyPredictionBackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="PropertyPredictionBackEnd" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.propertypredictionbackend.PropertyPredictionBackEndApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ImagerContrastPreProcessorTests.testAspect" />
+        <item itemvalue="JUnit.ImagerContrastPreProcessorTests.testContrastSuccessful" />
+        <item itemvalue="JUnit.ImageSizePreProcessorTests.testAspect" />
+        <item itemvalue="HTTP Request.All in generated-requests" />
+        <item itemvalue="JUnit.ImagerContrastPreProcessorTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb86dffe-930c-41a3-804b-0fc655faf5a1" name="Changes" comment="" />
+      <created>1667244107172</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667244107172</updated>
+      <workItem from="1667244110998" duration="23233000" />
+      <workItem from="1667368707259" duration="2248000" />
+      <workItem from="1667386879424" duration="51000" />
+      <workItem from="1667848102192" duration="1173000" />
+      <workItem from="1667849307998" duration="2220000" />
+      <workItem from="1667887190167" duration="3483000" />
+      <workItem from="1667892536457" duration="372000" />
+      <workItem from="1667930164924" duration="8872000" />
+    </task>
+    <task id="LOCAL-00001" summary="Implemented contrast functionality.">
+      <created>1667892472563</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667892472563</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Implemented simple flow of processing the image.&#10;Configured project to run on AOP (Aspects Oriented Programming).">
+      <created>1667937537047</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667937537047</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implemented contrast functionality." />
+    <MESSAGE value="Implemented simple flow of processing the image.&#10;Configured project to run on AOP (Aspects Oriented Programming)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented simple flow of processing the image.&#10;Configured project to run on AOP (Aspects Oriented Programming)." />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="(ImageContrastPreProcessor) context.getBean(&quot;contrastPreProcessor&quot;);" language="JAVA" />
+        <watch expression=" context.getBean(&quot;contrastPreProcessor&quot;);" language="JAVA" />
+      </configuration>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="(ImageContrastPreProcessor) context.getBean(&quot;contrastPreProcessor&quot;)" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

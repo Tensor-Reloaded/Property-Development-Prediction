@@ -1,0 +1,14 @@
+GET http://localhost:8080/testAspect
+
+###
+
+GET http://localhost:8080/testAspect
+
+<> 2022-11-08T205300.500.json
+
+###
+
+GET http://localhost:8080/testAspect
+
+###
+
