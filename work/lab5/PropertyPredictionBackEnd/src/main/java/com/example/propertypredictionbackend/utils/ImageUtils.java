@@ -2,7 +2,6 @@ package com.example.propertypredictionbackend.utils;
 
 import com.example.propertypredictionbackend.exceptions.ConvertBase64ImageToBufferedImageException;
 import com.example.propertypredictionbackend.exceptions.ConvertBufferedImageToBase64ImageException;
-import org.imgscalr.Scalr;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

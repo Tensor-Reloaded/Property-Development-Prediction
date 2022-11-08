@@ -5,30 +5,32 @@ import com.example.propertypredictionbackend.RequestPredictionProxy;
 import com.example.propertypredictionbackend.exceptions.ConvertBase64ImageToBufferedImageException;
 import com.example.propertypredictionbackend.http_predictions.Coordinate;
 import com.example.propertypredictionbackend.http_predictions.PredictionRequest;
+import com.example.propertypredictionbackend.preprocesors.ImageContrastPreProcessor;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessor;
-import com.example.propertypredictionbackend.preprocesors.ImageSizePreProcessor;
 import com.example.propertypredictionbackend.utils.ImageUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
-public class ImageSizePreProcessorTests {
+public class ImagerContrastPreProcessorTests {
+
     private static ImagePreProcessor preProcessor;
-    private static final String PATH_VALID_IMAGE = "src/test/java/com/example/propertypredictionbackend/preprocessors_tests/test_images/textBase.txt";
+    private static final String PATH_IMAGE = "src/test/java/com/example/propertypredictionbackend/preprocessors_tests/test_images/contrastImage.txt";
     private static final String PATH_INVALID_IMAGE = "src/test/java/com/example/propertypredictionbackend/preprocessors_tests/test_images/invalidTextImage.txt";
 
     @BeforeAll
     public static void init() {
-        preProcessor = new ImageSizePreProcessor();
+        preProcessor = new ImageContrastPreProcessor();
     }
 
     @Test
-    public void testSuccessfullyResizedImage() {
-        // Arrange
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(PATH_VALID_IMAGE)))) {
+    public void testContrastSuccessful() {
+        //Arrange
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(PATH_IMAGE)))) {
             String image = reader.readLine();
             Coordinate coordinate = new Coordinate.CoordinateBuilder()
                     .withLatitude(43.464868f)
@@ -43,10 +45,20 @@ public class ImageSizePreProcessorTests {
             // Act
             preProcessor.preProcessImage(adapter);
             BufferedImage imageBufferedTest = ImageUtils.convertBase64ImageToBufferedImage(adapter.getImage());
+            BufferedImage oldImageBufferedTest = ImageUtils.convertBase64ImageToBufferedImage(adapter.getImage());
+
+            //Just for visual checking
+            File fileOutput = new File("src/test/java/com/example/propertypredictionbackend/preprocessors_tests/test_images/new.jpg");
+            ImageIO.write(imageBufferedTest, "jpeg", fileOutput);
 
             // Assert
-            Assertions.assertEquals(240, imageBufferedTest.getHeight());
-            Assertions.assertEquals(240, imageBufferedTest.getWidth());
+            Assertions.assertEquals(imageBufferedTest.getHeight(), oldImageBufferedTest.getHeight());
+            Assertions.assertEquals(imageBufferedTest.getWidth(), oldImageBufferedTest.getWidth());
+            for (int length = 0; length < imageBufferedTest.getWidth(); length++) {
+                for (int heigth = 0; heigth < imageBufferedTest.getHeight(); heigth++) {
+                    Assertions.assertTrue(oldImageBufferedTest.getRGB(length, heigth) <= imageBufferedTest.getRGB(length, heigth));
+                }
+            }
 
         } catch (IOException e) {
             throw new RuntimeException(e);
