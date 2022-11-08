@@ -2,16 +2,22 @@ package com.example.propertypredictionbackend;
 
 import com.example.propertypredictionbackend.flows.PredictionFlow;
 import com.example.propertypredictionbackend.flows.SimplePredictionFlow;
+import com.example.propertypredictionbackend.http_predictions.Coordinate;
 import com.example.propertypredictionbackend.http_predictions.PredictionRequest;
 import com.example.propertypredictionbackend.http_predictions.PredictionResponse;
+import com.example.propertypredictionbackend.preprocesors.ImageContrastPreProcessor;
+import com.example.propertypredictionbackend.preprocesors.ImagePreProcessor;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessorFactory;
+import com.example.propertypredictionbackend.preprocesors.ImageSizePreProcessor;
+import com.example.propertypredictionbackend.utils.ImageUtils;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 import java.util.Objects;
 import java.util.PropertyResourceBundle;
@@ -49,4 +55,34 @@ public class RequestController {
         return predictionFlow.getResponseFromModel(imagePredictionModelURL, id);
     }
     //TODO new route for prices --> new flow of work
+
+    @GetMapping(value = "/testAspect")
+    public void demonstrationOfTheAspect() {
+        /*
+        This method is here only for understanding the way the aspects works.
+        Should be deleted after.
+         */
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("src/test/java/com/example/propertypredictionbackend/preprocessors_tests/test_images/textBase.txt")))) {
+            ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+            ImagePreProcessor preProcessorLocal = (ImagePreProcessor) context.getBean("sizePreProcessor");
+            String image = reader.readLine();
+            Coordinate coordinate = new Coordinate.CoordinateBuilder()
+                    .withLatitude(43.464868f)
+                    .withLongitude(54.3161f)
+                    .build();
+            PredictionRequest request = new PredictionRequest.PredictionRequestBuilder()
+                    .withImage(image)
+                    .withYearsInFuture(5)
+                    .withCoordinate(coordinate).build();
+            RequestImageGetter adapter = new RequestPredictionProxy(request);
+
+            // Act
+            preProcessorLocal.preProcessImage(adapter);
+
+            // Assert
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

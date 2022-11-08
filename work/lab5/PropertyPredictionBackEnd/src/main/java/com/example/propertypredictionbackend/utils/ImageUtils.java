@@ -34,4 +34,9 @@ public class ImageUtils {
             throw new ConvertBase64ImageToBufferedImageException(e.getMessage());
         }
     }
+
+    public void PrintSimpleMessage() {
+        //Dummy method. Should be deleted.
+        System.out.println("Hellow World!");
+    }
 }
