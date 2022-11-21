@@ -11,7 +11,7 @@ class Encoder(nn.Module):
         
         ### Convolutional section
         self.encoder_cnn = nn.Sequential(
-            nn.Conv2d(1, 8, 3, stride=2, padding=1),
+            nn.Conv2d(3, 8, 3, stride=2, padding=1),
             nn.ReLU(True),
             nn.Conv2d(8, 16, 3, stride=2, padding=1),
             nn.BatchNorm2d(16),
@@ -71,8 +71,8 @@ class AE(nn.Module):
     def __init__(self):
         super(AE, self).__init__()
         self.temporal_embedding = nn.Parameter(torch.rand(1, 3, 32, 32))
-        self.encoder = Encoder(32*32*4, 128)
-        self.decoder = Decoder(32*32*4, 128)
+        self.encoder = Encoder(32*32*3, 128)
+        self.decoder = Decoder(32*32*3, 128)
 
     def forward(self, x, time_skip):
         time_skip_vector = (self.temporal_embedding.repeat(len(time_skip), 1, 1, 1).view(len(time_skip), -1) * time_skip.unsqueeze(1)).view(len(time_skip), 3, 32, 32)
