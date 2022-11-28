@@ -83,8 +83,8 @@ public class ImagerContrastPreProcessorTests {
             Assertions.assertEquals(imageBufferedTest.getHeight(), oldImageBufferedTest.getHeight());
             Assertions.assertEquals(imageBufferedTest.getWidth(), oldImageBufferedTest.getWidth());
             for (int length = 0; length < imageBufferedTest.getWidth(); length++) {
-                for (int heigth = 0; heigth < imageBufferedTest.getHeight(); heigth++) {
-                    Assertions.assertTrue(oldImageBufferedTest.getRGB(length, heigth) <= imageBufferedTest.getRGB(length, heigth));
+                for (int height = 0; height < imageBufferedTest.getHeight(); height++) {
+                    Assertions.assertTrue(oldImageBufferedTest.getRGB(length, height) <= imageBufferedTest.getRGB(length, height));
                 }
             }
 

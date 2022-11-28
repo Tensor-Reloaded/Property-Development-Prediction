@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <bean id="imageUtils" class="com.example.propertypredictionbackend.utils.ImageUtils"/>
     <bean id="trackerForImageUtils" class="aspects.ImageUtilsAspect"/>
@@ -9,14 +13,20 @@
     <bean id="simpleFlow" class="com.example.propertypredictionbackend.flows.SimplePredictionFlow"/>
     <bean id="trackerForSimpleFlow" class="aspects.SimpleFlowAspect"/>
     <bean id="trackerForSimpleFlowForYears" class="aspects.PredictionRequestYearsInFutureAspect"/>
+    <bean id="flowMonitor" class="aspects.monitors.SimpleFlowMonitor"/>
 
     <bean id="sizePreProcessor" class="com.example.propertypredictionbackend.preprocesors.ImageSizePreProcessor"/>
     <bean id="trackerForSize" class="aspects.SizePreProcessorAspect"/>
 
-    <bean id="contrastPreProcessor" class="com.example.propertypredictionbackend.preprocesors.ImageContrastPreProcessor"/>
+    <bean id="contrastPreProcessor"
+          class="com.example.propertypredictionbackend.preprocesors.ImageContrastPreProcessor"/>
     <bean id="trackerForContrast" class="aspects.ContrastPreProcessorAspect"/>
 
-    <bean id="imagePreProcessorFactory" class="com.example.propertypredictionbackend.preprocesors.ImagePreProcessorFactory" />
+    <bean id="controller" class="com.example.propertypredictionbackend.RequestController"/>
+    <bean id="controllerMonitor" class="aspects.monitors.RequestMonitor"/>
+
+    <bean id="imagePreProcessorFactory"
+          class="com.example.propertypredictionbackend.preprocesors.ImagePreProcessorFactory"/>
 
     <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"/>
 </beans>

@@ -7,7 +7,7 @@ import com.example.propertypredictionbackend.dtos.PredictionRequest;
 import com.example.propertypredictionbackend.dtos.PredictionResponse;
 
 public class CommunicationUtils {
-    public static PredictionRequest mapHttpPredictionRequest(HttpPredictionRequest request) {
+    public static PredictionRequest mapHttpPredictionRequestToPredictionRequest(HttpPredictionRequest request) {
         return new PredictionRequest.PredictionRequestBuilder()
                 .withCoordinate(new Coordinate.CoordinateBuilder()
                         .withLatitude(request.getCoordinates().getLatitude())
@@ -18,7 +18,7 @@ public class CommunicationUtils {
                 .build();
     }
 
-    public static HttpPredictionResponse mapPredictionResponse(PredictionResponse response) {
+    public static HttpPredictionResponse mapPredictionResponseToHttpPredictionResponse(PredictionResponse response) {
         HttpPredictionResponse httpPredictionResponse = new HttpPredictionResponse();
         httpPredictionResponse.setImage(response.getImage());
         httpPredictionResponse.setPredictedPrice(response.getPredictedPrice());

@@ -18,8 +18,8 @@ import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import java.util.UUID;
 
-import static com.example.propertypredictionbackend.utils.CommunicationUtils.mapHttpPredictionRequest;
-import static com.example.propertypredictionbackend.utils.CommunicationUtils.mapPredictionResponse;
+import static com.example.propertypredictionbackend.utils.CommunicationUtils.mapHttpPredictionRequestToPredictionRequest;
+import static com.example.propertypredictionbackend.utils.CommunicationUtils.mapPredictionResponseToHttpPredictionResponse;
 
 @RestController
 @RequestMapping("/api")
@@ -41,9 +41,12 @@ public class RequestController {
         }
     }
 
-    @RequestMapping(value = "/predictDevelopment", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+    @RequestMapping(value = "/predictDevelopment",
+            method = RequestMethod.POST,
+            consumes = "application/json",
+            produces = "application/json")
     public HttpPredictionResponse handleImagePredictionRequest(@RequestBody HttpPredictionRequest httpRequest) {
-        PredictionRequest request = mapHttpPredictionRequest(httpRequest);
+        PredictionRequest request = mapHttpPredictionRequestToPredictionRequest(httpRequest);
 
         RequestImageGetter adapter = new RequestPredictionProxy(request);
 
@@ -51,9 +54,8 @@ public class RequestController {
 
         UUID id = predictionFlow.sendRequestToModel(imagePredictionModelURL, request);
 
-        return mapPredictionResponse(predictionFlow.getResponseFromModel(imagePredictionModelURL, id));
+        return mapPredictionResponseToHttpPredictionResponse(predictionFlow.getResponseFromModel(imagePredictionModelURL, id));
     }
-    //TODO new route for prices --> new flow of work
 
     @GetMapping(value = "/testAspect")
     public void demonstrationOfTheAspect() {
