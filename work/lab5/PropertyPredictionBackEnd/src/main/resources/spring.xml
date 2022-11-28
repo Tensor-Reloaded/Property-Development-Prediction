@@ -8,6 +8,7 @@
 
     <bean id="simpleFlow" class="com.example.propertypredictionbackend.flows.SimplePredictionFlow"/>
     <bean id="trackerForSimpleFlow" class="aspects.SimpleFlowAspect"/>
+    <bean id="trackerForSimpleFlowForYears" class="aspects.PredictionRequestYearsInFutureAspect"/>
 
     <bean id="sizePreProcessor" class="com.example.propertypredictionbackend.preprocesors.ImageSizePreProcessor"/>
     <bean id="trackerForSize" class="aspects.SizePreProcessorAspect"/>

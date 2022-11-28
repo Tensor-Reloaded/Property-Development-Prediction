@@ -1,13 +1,12 @@
 package com.example.propertypredictionbackend;
 
+import com.example.propertypredictionbackend.dtos.*;
+import com.example.propertypredictionbackend.dtos.http.HttpPredictionRequest;
+import com.example.propertypredictionbackend.dtos.http.HttpPredictionResponse;
 import com.example.propertypredictionbackend.flows.PredictionFlow;
 import com.example.propertypredictionbackend.flows.SimplePredictionFlow;
-import com.example.propertypredictionbackend.dtos.Coordinate;
-import com.example.propertypredictionbackend.dtos.PredictionRequest;
-import com.example.propertypredictionbackend.dtos.PredictionResponse;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessor;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessorFactory;
-import io.swagger.annotations.Api;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +17,9 @@ import java.util.Objects;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import java.util.UUID;
+
+import static com.example.propertypredictionbackend.utils.CommunicationUtils.mapHttpPredictionRequest;
+import static com.example.propertypredictionbackend.utils.CommunicationUtils.mapPredictionResponse;
 
 @RestController
 @RequestMapping("/api")
@@ -40,14 +42,16 @@ public class RequestController {
     }
 
     @RequestMapping(value = "/predictDevelopment", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
-    public PredictionResponse handleImagePredictionRequest(@RequestBody PredictionRequest request) {
+    public HttpPredictionResponse handleImagePredictionRequest(@RequestBody HttpPredictionRequest httpRequest) {
+        PredictionRequest request = mapHttpPredictionRequest(httpRequest);
+
         RequestImageGetter adapter = new RequestPredictionProxy(request);
 
         predictionFlow.adaptPredictionImage(adapter);
 
         UUID id = predictionFlow.sendRequestToModel(imagePredictionModelURL, request);
 
-        return predictionFlow.getResponseFromModel(imagePredictionModelURL, id);
+        return mapPredictionResponse(predictionFlow.getResponseFromModel(imagePredictionModelURL, id));
     }
     //TODO new route for prices --> new flow of work
 

@@ -13,14 +13,18 @@ public class PredictionRequestYearsInFutureAspect {
     public void testObtainingSingletonInstanceUsingAspects() {
         // Arrange
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        PredictionRequest predictionRequest = (PredictionRequest) context.getBean("predictionRequest");
+        var weakReference = new Object() {
+            PredictionRequest predictionRequest = (PredictionRequest) context.getBean("predictionRequest");
+        };
 
         // Act
 
         // Act + Asset
 
-        Assertions.assertThrows(YearNeedToBePositiveException.class, () -> {
-            predictionRequest.setYearsInFuture(-1);
-        });
+        Assertions.assertThrows(YearNeedToBePositiveException.class, () -> weakReference.predictionRequest = new PredictionRequest.PredictionRequestBuilder()
+                .withYearsInFuture(-1)
+                .withImage(weakReference.predictionRequest.getImage())
+                .withCoordinate(weakReference.predictionRequest.getCoordinates())
+                .build());
     }
 }

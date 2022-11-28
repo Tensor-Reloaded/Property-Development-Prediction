@@ -3,7 +3,6 @@ package com.example.propertypredictionbackend.dtos;
 public class PredictionResponse {
 
     private final String image;
-
     private final float predictedPrice;
 
     private PredictionResponse(PredictionResponseBuilder builder) {
