@@ -5,13 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce3c08d1-95bf-47ae-8589-5dfbd520f3cd" name="Changes" comment="Updated project to have Swagger documentation.&#10;Also created AOP for ImagePreProcessorFactory.">
-      <change afterPath="$PROJECT_DIR$/../PDP_api/.idea/PDP_api.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PDP_api/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/rest/Constants.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/rest/model/Coordinate.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/rest/model/PredictionRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/rest/model/PredictionResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/rest/model/http/HttpCoordinates.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/rest/model/http/HttpPredictionRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/rest/model/http/HttpPredictionResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/PropertypredictionApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/PropertyPredictionApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/rest/controllers/PredictionRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/rest/controllers/PredictionRequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/rest/model/Coordinate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/rest/model/ImagePredictionResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/rest/model/PredictionRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/src/main/java/com/tensorreloaded/propertyprediction/rest/model/PricePredictionResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/src/test/java/com/tensorreloaded/propertyprediction/PropertypredictionApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/src/test/java/com/tensorreloaded/propertyprediction/PropertyPredictionApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_8_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_9_9_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_9_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PropertyPredictionBackEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PropertyPredictionBackEnd.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/dtos/PredictionResponseConfig.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,20 +77,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/tudorcraciun/VisualStudioCode/Property-Development-Prediction/work/lab5/PropertyPredictionBackEnd",
-    "spring.configuration.checksum": "cc5592db0e75b0553e59d4c3e3f405d4"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tudorcraciun/VisualStudioCode/Property-Development-Prediction/work/lab5/PropertyPredictionBackEnd&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;cc5592db0e75b0553e59d4c3e3f405d4&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\Master\ASET\PropertyPredictionBackEnd\src\main\java\com\example\propertypredictionbackend" />
@@ -204,6 +223,7 @@
       <workItem from="1667892536457" duration="372000" />
       <workItem from="1667930164924" duration="8872000" />
       <workItem from="1669577121965" duration="4893000" />
+      <workItem from="1669910351711" duration="1751000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented contrast functionality.">
       <created>1667892472563</created>

@@ -1,7 +1,6 @@
-package com.tensorreloaded.propertyprediction.rest.model;
+package com.tensorreloaded.propertyprediction.rest.model
 
-public record Coordinate(
-        float latitude,
-        float longitude
-) {
-}
+data class Coordinate(
+    val latitude: Float,
+    val longitude: Float
+)

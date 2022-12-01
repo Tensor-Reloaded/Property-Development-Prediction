@@ -1,10 +1,7 @@
-package com.tensorreloaded.propertyprediction.rest.model;
+package com.tensorreloaded.propertyprediction.rest.model
 
-import java.awt.image.BufferedImage;
-
-public record PredictionRequest(
-        BufferedImage image,
-        Coordinate coordinates,
-        int yearsInFuture
-) {
-}
+data class PredictionRequest(
+    val image: String,
+    val coordinates: Coordinate,
+    val yearsInFuture: Int
+)
