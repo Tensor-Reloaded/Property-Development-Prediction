@@ -1,7 +1,8 @@
 import os
 from PIL import Image
 import random
-from mpire import WorkerPool
+from threading import Lock
+
 
 def process_images(images_path, save_path, patch_size):
     images_from_location = os.listdir(images_path)
@@ -19,17 +20,18 @@ def process_images(images_path, save_path, patch_size):
             generated_values = True
         image = image.crop((top_x, top_y, bottom_x, bottom_y))
         image.save(f"{save_path}//{image_name}_{patch_size[0]}_{patch_size[1]}.tif")
+    
 
-
-def process_location(image_directory, save_directory, patch_size, location):
+def process_location(image_directory, save_directory, patch_size, location, unique_id):
     images_location = os.path.join(image_directory, location, 'images')
     images_from_location = os.listdir(images_location)
-    location_save_name = f"{save_directory}\\{location}_{len(os.listdir(save_directory))}\\images"
+    location_save_name = f"{save_directory}\\{location}_{unique_id}\\images"
     
-    os.mkdir(f"{save_directory}\\{location}_{len(os.listdir(save_directory))}")
+    os.mkdir(f"{save_directory}\\{location}_{unique_id}")
     os.mkdir(location_save_name)
     
     process_images(images_location, location_save_name, (patch_size[0], patch_size[1]))    
+    return unique_id
 
 
 def augment_dataset_one_time(image_directory, save_directory, patch_size):

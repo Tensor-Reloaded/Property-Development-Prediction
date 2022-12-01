@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[ ]:
 
 
-from mpire import WorkerPool
-from defs import process_location
+from multiprocessing import Pool
+import defs
 import os
+from PIL import Image
 
 if __name__ == '__main__':
     directory = "E:\\Facultate\\_Master\\Advanced Software Engineering Techniques\\Dataset_SpaceNet\\SN7_buildings_train\\train"
@@ -14,16 +15,26 @@ if __name__ == '__main__':
     patch_size = (128, 128)
     processes_number = 5
     augmentation_number = 1
-    worker_work_portion = 14
-    work_portion_size = 1
+    work_portion_size = 60 // processes_number
     keep_worker_alive = True
     
     locations = os.listdir(directory)
-    argument_list = [[directory, save_directory, patch_size, locations[i]] for i in range(len(locations))]
+    locations = locations * augmentation_number
     
+    unique_ids = [i + len(os.listdir(save_directory)) for i in range(1, augmentation_number * 60 + 1)]
+    
+    argument_list = [[directory, save_directory, patch_size, locations[i], unique_ids[i]] for i in range(len(unique_ids))]
+    
+    result = []
     for i in range(augmentation_number):
-        with WorkerPool(n_jobs=processes_number, keep_alive=keep_worker_alive) as pool:
-            result = pool.map_unordered(process_location, argument_list, worker_lifespan=worker_work_portion, chunk_size=work_portion_size)
+        print("Started jobs")
+        pool = Pool(processes=processes_number, maxtasksperchild=work_portion_size)
+        result = pool.starmap(defs.process_location, argument_list)
+        pool.close()
+        pool.join()
+        
+        print(result)
+        print("Pool closed")
 
 
 # In[ ]:
