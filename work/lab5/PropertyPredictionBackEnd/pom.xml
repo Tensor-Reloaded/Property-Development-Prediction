@@ -88,6 +88,29 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <scope>compile</scope>
         </dependency>
+
+        <!--        START OF network-->
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet</artifactId>
+            <version>2.25.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>2.28</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>2.28</version>
+        </dependency>
+        <dependency>
+            <groupId>com.unboundid.product.scim2</groupId>
+            <artifactId>scim2-sdk-client</artifactId>
+            <version>2.3.6</version>
+        </dependency>
+        <!--        END OF network-->
     </dependencies>
 
     <build>

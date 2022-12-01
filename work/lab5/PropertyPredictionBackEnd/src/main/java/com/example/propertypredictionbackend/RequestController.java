@@ -27,6 +27,7 @@ public class RequestController {
 
     private final ResourceBundle bundle;
     private final URL imagePredictionModelURL;
+    private final URL directImagePredictionModelURL;
     private final ImagePreProcessorFactory factory;
     private final PredictionFlow predictionFlow;
 
@@ -35,7 +36,9 @@ public class RequestController {
             this.factory = ImagePreProcessorFactory.getInstance();
             this.predictionFlow = new SimplePredictionFlow();
             this.bundle = new PropertyResourceBundle(new InputStreamReader(Objects.requireNonNull(fileStream)));
-            this.imagePredictionModelURL = new URL(this.bundle.getString("url.backend.model"));
+            String baseURL = this.bundle.getString("url.backend.model");
+            this.imagePredictionModelURL = new URL(baseURL);// ?
+            this.directImagePredictionModelURL = new URL(baseURL + "/predictProperty");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -55,6 +58,16 @@ public class RequestController {
         UUID id = predictionFlow.sendRequestToModel(imagePredictionModelURL, request);
 
         return mapPredictionResponseToHttpPredictionResponse(predictionFlow.getResponseFromModel(imagePredictionModelURL, id));
+    }
+
+    @RequestMapping(value = "/predictDevelopmentDirect",
+            method = RequestMethod.POST,
+            consumes = "application/json",
+            produces = "application/json")
+    public PredictionResponse returnPrediction(@RequestBody HttpPredictionRequest httpRequest) {
+        PredictionRequest request = mapHttpPredictionRequestToPredictionRequest(httpRequest);
+
+        return predictionFlow.getDirectResponseFromModel(directImagePredictionModelURL, request);
     }
 
     @GetMapping(value = "/testAspect")

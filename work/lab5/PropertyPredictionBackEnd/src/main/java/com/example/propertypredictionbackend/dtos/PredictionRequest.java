@@ -58,5 +58,14 @@ public class PredictionRequest implements Serializable {
             return new PredictionRequest(this);
         }
     }
+
+    @Override
+    public String toString() {
+        return "PredictionRequest{" +
+                "image='" + image + '\'' +
+                ", coordinates=" + coordinates +
+                ", yearsInFuture=" + yearsInFuture +
+                '}';
+    }
 }
 

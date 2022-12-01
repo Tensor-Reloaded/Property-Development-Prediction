@@ -3,14 +3,24 @@ package com.example.propertypredictionbackend.flows;
 import com.example.propertypredictionbackend.RequestImageGetter;
 import com.example.propertypredictionbackend.dtos.PredictionRequest;
 import com.example.propertypredictionbackend.dtos.PredictionResponse;
+import com.example.propertypredictionbackend.network.ServerManagerImpl;
+import com.example.propertypredictionbackend.network.model.Result;
+import com.example.propertypredictionbackend.network.model.ResultError;
+import com.example.propertypredictionbackend.network.model.ResultSuccess;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessor;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessorFactory;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessorType;
+import io.swagger.models.HttpMethod;
 
 import java.net.URL;
 import java.util.UUID;
 
+import static java.lang.System.out;
+
 public class SimplePredictionFlow extends PredictionFlow {
+
+    private ServerManagerImpl serverManagerInstance = ServerManagerImpl.getInstance();
+
     @Override
     public void adaptPredictionImage(RequestImageGetter predictionRequest) {
 
@@ -23,7 +33,6 @@ public class SimplePredictionFlow extends PredictionFlow {
         contrastPreProcessor.preProcessImage(predictionRequest);
 
         sizePreProcessor.preProcessImage(predictionRequest);
-
     }
 
     @Override
@@ -33,6 +42,27 @@ public class SimplePredictionFlow extends PredictionFlow {
 
     @Override
     public PredictionResponse getResponseFromModel(URL imagePredictionModelURL, UUID id) {
+        return null;
+    }
+
+    @Override
+    public PredictionResponse getDirectResponseFromModel(URL imagePredictionModelURL, PredictionRequest predictionRequest) {
+        Result<PredictionResponse> receivedResult = serverManagerInstance.sendRequest(
+                imagePredictionModelURL,
+                predictionRequest
+        );
+        out.println("Received answer from server: " + receivedResult.toString());
+
+        if(receivedResult instanceof ResultError<PredictionResponse>) {
+            out.println("Failed request");
+            //throw ((ResultError<PredictionResponse>) receivedResult).getException();
+            return null;
+        } else if(receivedResult instanceof ResultSuccess<PredictionResponse>) {
+            out.println("Succeeded request");
+            return ((ResultSuccess<PredictionResponse>) receivedResult).getResultData();
+        }
+
+        out.println("Unknown status");
         return null;
     }
 }

@@ -37,4 +37,12 @@ public class PredictionResponse {
             return new PredictionResponse(this);
         }
     }
+
+    @Override
+    public String toString() {
+        return "PredictionResponse{" +
+                "image='" + image + '\'' +
+                ", predictedPrice=" + predictedPrice +
+                '}';
+    }
 }
