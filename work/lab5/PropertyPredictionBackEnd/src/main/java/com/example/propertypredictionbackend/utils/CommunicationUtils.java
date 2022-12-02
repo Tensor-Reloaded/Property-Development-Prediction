@@ -24,4 +24,11 @@ public class CommunicationUtils {
         httpPredictionResponse.setPredictedPrice(response.getPredictedPrice());
         return httpPredictionResponse;
     }
+
+    public static PredictionResponse mapHttpPredictionResponseToPredictionResponse(HttpPredictionResponse response) {
+        return new PredictionResponse.PredictionResponseBuilder()
+                .withPredictedPrice(response.getPredictedPrice())
+                .withImage(response.getImage())
+                .build();
+    }
 }

@@ -12,7 +12,6 @@ import com.example.propertypredictionbackend.preprocesors.ImagePreProcessor;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessorFactory;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessorType;
 import com.example.propertypredictionbackend.utils.CommunicationUtils;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
 import java.net.URL;
