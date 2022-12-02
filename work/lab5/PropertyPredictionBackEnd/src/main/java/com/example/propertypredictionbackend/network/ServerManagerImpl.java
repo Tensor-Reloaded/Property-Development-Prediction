@@ -32,20 +32,20 @@ public class ServerManagerImpl implements ServerManager {
     }
 
     @Override
-    public <T, R> Result<T> sendRequest(URL serverUrl, R requestBody) {
+    public <R> Result<String> sendRequest(URL serverUrl, R requestBody) {
         out.println("Sending request body " + requestBody.toString() + " to server " + serverUrl);
         try {
-            Object returnedObj = client
+            String returnedObj = client
                     .target(serverUrl.toURI())
                     .request(MediaType.APPLICATION_JSON)
                     .post(Entity.entity(requestBody, MediaType.APPLICATION_JSON))
-                    .getEntity();
+                    .readEntity(String.class);
 
             // Failure leads into exception catch
-            return new ResultSuccess<T>((T) returnedObj);
+            return new ResultSuccess<>(returnedObj);
 
         } catch (Throwable t) {
-            out.println("Caught error");
+            out.println("Caught error with message " + t.getMessage());
             t.printStackTrace();
             return new ResultError<>(t);
         }

@@ -38,7 +38,7 @@ public class RequestController {
             this.bundle = new PropertyResourceBundle(new InputStreamReader(Objects.requireNonNull(fileStream)));
             String baseURL = this.bundle.getString("url.backend.model");
             this.imagePredictionModelURL = new URL(baseURL);// ?
-            this.directImagePredictionModelURL = new URL(baseURL + "/predictProperty");
+            this.directImagePredictionModelURL = new URL(baseURL + "/api/predictProperty");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -7,18 +7,16 @@ import java.net.URL;
 
 /**
  * Generic interface to send requests to a provided server
- *
  */
 public interface ServerManager {
 
     /**
-     * @param serverUrl The server to which the request is sent
+     * @param serverUrl   The server to which the request is sent
      * @param requestBody The request body
-     * @param <T> The datatype of the received information
-     * @param <R> The datatype of the sent information
+     * @param <R>         The datatype of the send information
      * @return The result of
      */
-    <T, R> Result<T> sendRequest(
+    <R> Result<String> sendRequest(
             URL serverUrl,
             R requestBody
     );
