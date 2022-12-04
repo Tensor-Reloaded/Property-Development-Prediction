@@ -8,6 +8,8 @@
        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <bean id="imageUtils" class="com.example.propertypredictionbackend.utils.ImageUtils"/>
+    <bean id="imageUtilsMonitor" class="aspects.monitors.ImageUtilsMonitor"/>
+
     <bean id="trackerForImageUtils" class="aspects.ImageUtilsAspect"/>
 
     <bean id="simpleFlow" class="com.example.propertypredictionbackend.flows.SimplePredictionFlow"/>

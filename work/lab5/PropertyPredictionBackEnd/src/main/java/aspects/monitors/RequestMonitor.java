@@ -1,10 +1,10 @@
 package aspects.monitors;
 
+import com.example.propertypredictionbackend.utils.SingletonProvider;
 import com.example.propertypredictionbackend.dtos.PredictionRequest;
 import com.example.propertypredictionbackend.dtos.http.HttpPredictionRequest;
 import com.example.propertypredictionbackend.exceptions.ConvertBase64ImageToBufferedImageException;
 import com.example.propertypredictionbackend.utils.CommunicationUtils;
-import com.example.propertypredictionbackend.utils.ImageUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -19,7 +19,7 @@ public class RequestMonitor {
         HttpPredictionRequest request = (HttpPredictionRequest) argumentsForFlow[0];
         PredictionRequest requestPrediction = CommunicationUtils.mapHttpPredictionRequestToPredictionRequest(request);
         try {
-            ImageUtils.convertBase64ImageToBufferedImage(requestPrediction.getImage());
+            SingletonProvider.getImageUtils().convertBase64ImageToBufferedImage(requestPrediction.getImage());
             if (request.getYearsInFuture() <= 0) {
                 System.out.println("Invalid years. Setting years to value 1");
                 request.setYearsInFuture(1);

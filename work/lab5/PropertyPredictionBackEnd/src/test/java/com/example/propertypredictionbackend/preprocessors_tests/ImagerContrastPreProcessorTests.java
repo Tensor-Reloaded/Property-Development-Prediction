@@ -7,7 +7,7 @@ import com.example.propertypredictionbackend.dtos.Coordinate;
 import com.example.propertypredictionbackend.dtos.PredictionRequest;
 import com.example.propertypredictionbackend.preprocesors.ImageContrastPreProcessor;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessor;
-import com.example.propertypredictionbackend.utils.ImageUtils;
+import com.example.propertypredictionbackend.utils.SingletonProvider;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -72,8 +72,8 @@ public class ImagerContrastPreProcessorTests {
 
             // Act
             preProcessor.preProcessImage(adapter);
-            BufferedImage imageBufferedTest = ImageUtils.convertBase64ImageToBufferedImage(adapter.getImage());
-            BufferedImage oldImageBufferedTest = ImageUtils.convertBase64ImageToBufferedImage(adapter.getImage());
+            BufferedImage imageBufferedTest = SingletonProvider.getImageUtils().convertBase64ImageToBufferedImage(adapter.getImage());
+            BufferedImage oldImageBufferedTest = SingletonProvider.getImageUtils().convertBase64ImageToBufferedImage(adapter.getImage());
 
             //Just for visual checking
 //            File fileOutput = new File("src/test/java/com/example/propertypredictionbackend/preprocessors_tests/test_images/new.jpg");

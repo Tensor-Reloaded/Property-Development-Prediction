@@ -1,11 +1,8 @@
 package aspects.monitors;
 
+import com.example.propertypredictionbackend.utils.SingletonProvider;
 import com.example.propertypredictionbackend.dtos.PredictionRequest;
-import com.example.propertypredictionbackend.dtos.PredictionResponse;
 import com.example.propertypredictionbackend.exceptions.ConvertBase64ImageToBufferedImageException;
-import com.example.propertypredictionbackend.flows.SimplePredictionFlow;
-import com.example.propertypredictionbackend.preprocesors.ImagePreProcessorFactory;
-import com.example.propertypredictionbackend.utils.ImageUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
@@ -59,7 +56,7 @@ public class SimpleFlowMonitor {
     public Object monitorSendRequest(ProceedingJoinPoint pjp) {
         Object[] arguments = pjp.getArgs();
         try {
-            ImageUtils.convertBase64ImageToBufferedImage(((PredictionRequest) arguments[0]).getImage());
+            SingletonProvider.getImageUtils().convertBase64ImageToBufferedImage(((PredictionRequest) arguments[0]).getImage());
             return pjp.proceed(arguments);
         } catch (ConvertBase64ImageToBufferedImageException exception) {
             throw new RuntimeException("Invalid string base64 image!" + ((PredictionRequest) arguments[0]).getImage());

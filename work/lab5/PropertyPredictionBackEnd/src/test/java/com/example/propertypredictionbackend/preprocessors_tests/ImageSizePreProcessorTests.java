@@ -7,7 +7,7 @@ import com.example.propertypredictionbackend.dtos.Coordinate;
 import com.example.propertypredictionbackend.dtos.PredictionRequest;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessor;
 import com.example.propertypredictionbackend.preprocesors.ImageSizePreProcessor;
-import com.example.propertypredictionbackend.utils.ImageUtils;
+import com.example.propertypredictionbackend.utils.SingletonProvider;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -71,7 +71,7 @@ public class ImageSizePreProcessorTests {
 
             // Act
             preProcessor.preProcessImage(adapter);
-            BufferedImage imageBufferedTest = ImageUtils.convertBase64ImageToBufferedImage(adapter.getImage());
+            BufferedImage imageBufferedTest = SingletonProvider.getImageUtils().convertBase64ImageToBufferedImage(adapter.getImage());
 
             // Assert
             Assertions.assertEquals(240, imageBufferedTest.getHeight());
