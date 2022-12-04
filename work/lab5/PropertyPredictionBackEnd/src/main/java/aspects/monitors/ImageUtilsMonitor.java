@@ -22,7 +22,7 @@ public class ImageUtilsMonitor {
         Matcher matcher = pattern.matcher(base64Image);
 
         if(!matcher.matches()) {
-            throw new NotBase64ImageException(base64Image);
+            throw new NotBase64ImageException("[ImageUtilsMonitor] "+base64Image);
         }
 
         try {

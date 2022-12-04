@@ -15,7 +15,6 @@ import com.example.propertypredictionbackend.utils.CommunicationUtils;
 import com.google.gson.Gson;
 
 import java.net.URL;
-import java.util.UUID;
 
 import static java.lang.System.out;
 
@@ -38,16 +37,6 @@ public class SimplePredictionFlow extends PredictionFlow {
     }
 
     @Override
-    public UUID sendRequestToModel(URL imagePredictionModelURL, PredictionRequest predictionRequest) {
-        return null;
-    }
-
-    @Override
-    public PredictionResponse getResponseFromModel(URL imagePredictionModelURL, UUID id) {
-        return null;
-    }
-
-    @Override
     public PredictionResponse getDirectResponseFromModel(URL imagePredictionModelURL, PredictionRequest predictionRequest) {
         Result<String> receivedResult = serverManagerInstance.sendRequest(
                 imagePredictionModelURL,
@@ -59,7 +48,10 @@ public class SimplePredictionFlow extends PredictionFlow {
         if (receivedResult instanceof ResultError<String>) {
             out.println("Failed request");
 //            throw ((ResultError<PredictionResponse>) receivedResult).getException();
-            return null;
+            return new PredictionResponse.PredictionResponseBuilder()
+                    .withImage(receivedResult.toString())
+                    .withPredictedPrice(-1)
+                    .build();
         } else if (receivedResult instanceof ResultSuccess<String>) {
             out.println("Succeeded request");
             return CommunicationUtils.mapHttpPredictionResponseToPredictionResponse(

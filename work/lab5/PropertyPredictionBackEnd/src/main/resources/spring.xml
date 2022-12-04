@@ -30,5 +30,8 @@
     <bean id="imagePreProcessorFactory"
           class="com.example.propertypredictionbackend.preprocesors.ImagePreProcessorFactory"/>
 
+    <bean id="serverBean" class="com.example.propertypredictionbackend.network.ServerManagerImpl"/>
+    <bean id="serverMonitor" class="aspects.monitors.ServerMonitor"/>
+
     <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"/>
 </beans>

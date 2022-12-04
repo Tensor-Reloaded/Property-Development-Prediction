@@ -55,9 +55,7 @@ public class RequestController {
 
         predictionFlow.adaptPredictionImage(adapter);
 
-        UUID id = predictionFlow.sendRequestToModel(imagePredictionModelURL, request);
-
-        return mapPredictionResponseToHttpPredictionResponse(predictionFlow.getResponseFromModel(imagePredictionModelURL, id));
+        return mapPredictionResponseToHttpPredictionResponse(predictionFlow.getDirectResponseFromModel(imagePredictionModelURL, request));
     }
 
     @RequestMapping(value = "/predictDevelopmentDirect",

@@ -1,8 +1,7 @@
 package aspects.monitors;
 
-import com.example.propertypredictionbackend.utils.SingletonProvider;
 import com.example.propertypredictionbackend.dtos.PredictionRequest;
-import com.example.propertypredictionbackend.exceptions.ConvertBase64ImageToBufferedImageException;
+import com.example.propertypredictionbackend.utils.SingletonProvider;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
@@ -10,7 +9,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.rmi.server.UID;
 import java.util.Objects;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
@@ -25,12 +23,7 @@ public class SimpleFlowMonitor {
 
     }
 
-    @Pointcut("execution(* com.example.propertypredictionbackend.flows.SimplePredictionFlow.sendRequestToModel(..))")
-    public void sendRequest() {
-
-    }
-
-    @Pointcut("execution(* com.example.propertypredictionbackend.flows.SimplePredictionFlow.getResponseFromModel(..))")
+    @Pointcut("execution(* com.example.propertypredictionbackend.flows.SimplePredictionFlow.getDirectResponseFromModel(..))")
     public void receiveResponse() {
 
     }
@@ -48,30 +41,7 @@ public class SimpleFlowMonitor {
 
     @After("adaptImage()")
     public void afterAdaptImageCall() {
-        System.out.println("Adapt call finished");
-    }
-
-
-    @Around("sendRequest()")
-    public Object monitorSendRequest(ProceedingJoinPoint pjp) {
-        Object[] arguments = pjp.getArgs();
-        try {
-            SingletonProvider.getImageUtils().convertBase64ImageToBufferedImage(((PredictionRequest) arguments[0]).getImage());
-            return pjp.proceed(arguments);
-        } catch (ConvertBase64ImageToBufferedImageException exception) {
-            throw new RuntimeException("Invalid string base64 image!" + ((PredictionRequest) arguments[0]).getImage());
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @AfterReturning(value = "sendRequest()", returning = "returnValue")
-    public void afterSendCall(Object returnValue) {
-        if (returnValue == null) {
-            System.out.println("Error: null value for ID received from the model server!");
-        } else {
-            System.out.println("ID for receiving the image: " + returnValue);
-        }
+        System.out.println("[ServerMonitor] Adapt call finished");
     }
 
     private URL urlForPrediction() {
@@ -88,16 +58,17 @@ public class SimpleFlowMonitor {
     public Object monitorReceiveResponse(ProceedingJoinPoint pjp) {
         Object[] arguments = pjp.getArgs();
         URL url = (URL) arguments[0];
-        UID uid = (UID) arguments[1];
+        PredictionRequest image = (PredictionRequest) arguments[1];
         if (url == null) {
-            System.out.println("Null URL for receiving the model. Updating with " + urlForPrediction());
+            System.out.println("[ServerMonitor] Null URL for receiving the model. Updating with " + urlForPrediction());
             arguments[0] = urlForPrediction();
         }
-        if (uid == null) {
-            System.out.println("No UID provided for getting the image from the model server!");
-            throw new RuntimeException("Null UID when calling the image from the server model");
+        if (image == null) {
+            System.out.println("[ServerMonitor] No image provided for getting the image from the model server!");
+            throw new RuntimeException("[ServerMonitor] Null image when calling the image from the server model");
         }
         try {
+            SingletonProvider.getImageUtils().convertBase64ImageToBufferedImage(image.getImage());
             return pjp.proceed(arguments);
         } catch (Throwable e) {
             throw new RuntimeException(e);
@@ -107,9 +78,9 @@ public class SimpleFlowMonitor {
     @AfterReturning(value = "receiveResponse()", returning = "returnValue")
     public void afterReceiveCall(Object returnValue) {
         if (returnValue == null) {
-            System.out.println("Error: null response from the method that get the image from the server!");
+            System.out.println("[ServerMonitor] Error: null response from the method that get the image from the server!");
         } else {
-            System.out.println("Received the following response: " + returnValue);
+            System.out.println("[ServerMonitor] Received the following response: " + returnValue);
         }
     }
 

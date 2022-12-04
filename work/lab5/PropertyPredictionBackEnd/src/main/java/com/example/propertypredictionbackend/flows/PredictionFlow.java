@@ -14,9 +14,5 @@ public abstract class PredictionFlow {
 
     public abstract void adaptPredictionImage(RequestImageGetter predictionRequest);
 
-    public abstract UUID sendRequestToModel(URL imagePredictionModelURL, PredictionRequest predictionRequest);
-
-    public abstract PredictionResponse getResponseFromModel(URL imagePredictionModelURL, UUID id);
-
     public abstract PredictionResponse getDirectResponseFromModel(URL imagePredictionModelURL, PredictionRequest predictionRequest);
 }
