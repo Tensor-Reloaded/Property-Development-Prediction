@@ -1,0 +1,15 @@
+<google-map 
+    height="600px"
+    width="600px"
+    id="map"
+    [options]="mapOptions"
+    [center]="center"
+    [zoom]="zoom"
+    >
+</google-map>
+<br>
+<label for="years">Years in the future : </label>
+<input type="text" id="yearsInTheFuture" name="yearsInTheFuture" #yearsInTheFuture>
+
+<button (click)="getMapImage()">Save image</button>
+<img src="" alt="" id="image">
