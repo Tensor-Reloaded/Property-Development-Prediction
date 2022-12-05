@@ -16,6 +16,7 @@ public class ImagePreProcessorFactory {
         imagePreProcessorMap = new HashMap<>();
         imagePreProcessorMap.put(ImagePreProcessorType.CONTRAST_PROCESSOR, new ImageContrastPreProcessor());
         imagePreProcessorMap.put(ImagePreProcessorType.SIZE_PROCESSOR, new ImageSizePreProcessor());
+        imagePreProcessorMap.put(ImagePreProcessorType.CROP_PREPROCESSOR, new ImageCropPreProcessor());
     }
 
     public static ImagePreProcessorFactory getInstance() {

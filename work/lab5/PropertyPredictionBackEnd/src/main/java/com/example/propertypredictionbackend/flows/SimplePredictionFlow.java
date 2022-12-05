@@ -24,16 +24,21 @@ public class SimplePredictionFlow extends PredictionFlow {
 
     @Override
     public void adaptPredictionImage(RequestImageGetter predictionRequest) {
+//        Old code that increases the contrast and resizes the image
+//        ImagePreProcessor sizePreProcessor = ImagePreProcessorFactory.getInstance().
+//                getImagePreProcessor(ImagePreProcessorType.SIZE_PROCESSOR);
+//
+//        ImagePreProcessor contrastPreProcessor = ImagePreProcessorFactory.getInstance().
+//                getImagePreProcessor(ImagePreProcessorType.CONTRAST_PROCESSOR);
+//
+//        contrastPreProcessor.preProcessImage(predictionRequest);
+//
+//        sizePreProcessor.preProcessImage(predictionRequest);
 
-        ImagePreProcessor sizePreProcessor = ImagePreProcessorFactory.getInstance().
-                getImagePreProcessor(ImagePreProcessorType.SIZE_PROCESSOR);
+        ImagePreProcessor imageCropPreProcessor = ImagePreProcessorFactory.getInstance()
+                .getImagePreProcessor(ImagePreProcessorType.CROP_PREPROCESSOR);
 
-        ImagePreProcessor contrastPreProcessor = ImagePreProcessorFactory.getInstance().
-                getImagePreProcessor(ImagePreProcessorType.CONTRAST_PROCESSOR);
-
-        contrastPreProcessor.preProcessImage(predictionRequest);
-
-        sizePreProcessor.preProcessImage(predictionRequest);
+        imageCropPreProcessor.preProcessImage(predictionRequest);
     }
 
     @Override
