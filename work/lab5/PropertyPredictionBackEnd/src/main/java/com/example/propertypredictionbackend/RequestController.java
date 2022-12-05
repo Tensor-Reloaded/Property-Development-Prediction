@@ -43,7 +43,7 @@ public class RequestController {
             throw new RuntimeException(e);
         }
     }
-
+    @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/predictDevelopment",
             method = RequestMethod.POST,
             consumes = "application/json",
@@ -55,9 +55,10 @@ public class RequestController {
 
         predictionFlow.adaptPredictionImage(adapter);
 
-        return mapPredictionResponseToHttpPredictionResponse(predictionFlow.getDirectResponseFromModel(imagePredictionModelURL, request));
+        return mapPredictionResponseToHttpPredictionResponse(predictionFlow.getDirectResponseFromModel(directImagePredictionModelURL, request));
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/predictDevelopmentDirect",
             method = RequestMethod.POST,
             consumes = "application/json",

@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce3c08d1-95bf-47ae-8589-5dfbd520f3cd" name="Changes" comment="Tried to implement AOP">
-      <change afterPath="$PROJECT_DIR$/src/main/java/aspects/monitors/ImageUtilsMonitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/exceptions/NotBase64ImageException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/utils/SingletonProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/propertypredictionbackend/utils/ImageUtilsTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/propertypredictionbackend/utils/SingletonProviderTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aspects/monitors/RequestMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aspects/monitors/RequestMonitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aspects/monitors/SimpleFlowMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aspects/monitors/SimpleFlowMonitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/preprocesors/ImageContrastPreProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/preprocesors/ImageContrastPreProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/preprocesors/ImageSizePreProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/preprocesors/ImageSizePreProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/utils/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/utils/ImageUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/propertypredictionbackend/preprocessors_tests/ImageSizePreProcessorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/propertypredictionbackend/preprocessors_tests/ImageSizePreProcessorTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/propertypredictionbackend/preprocessors_tests/ImagerContrastPreProcessorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/propertypredictionbackend/preprocessors_tests/ImagerContrastPreProcessorTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="ce3c08d1-95bf-47ae-8589-5dfbd520f3cd" name="Changes" comment="Tried to implement AOP" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,6 +50,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Adi/Desktop/Property-Development-Prediction-devel/work/lab5/PDP_api"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\Master\ASET\PropertyPredictionBackEnd\src\main\java\com\example\propertypredictionbackend" />
@@ -86,7 +78,20 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in PropertyPredictionBackEnd">
+  <component name="RunManager" selected="Application.PropertyPredictionBackEndApplication">
+    <configuration name="PropertyPredictionBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.PropertyPredictionBackEndApplication" />
+      <module name="PropertyPredictionBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.propertypredictionbackend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in PropertyPredictionBackEnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PropertyPredictionBackEnd" />
       <option name="PACKAGE_NAME" value="" />
@@ -106,22 +111,6 @@
       <option name="PACKAGE_NAME" value="com.example.propertypredictionbackend.utils" />
       <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.utils.ImageUtilsTests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ImageUtilsTests.monitorThrowsNotBase64ImageExceptionWhenConvertBase64ImageToBufferedImageGivenInvalidImage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PropertyPredictionBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.propertypredictionbackend.utils.SingletonProvider" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.propertypredictionbackend.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.utils.ImageUtilsTests" />
-      <option name="METHOD_NAME" value="monitorThrowsNotBase64ImageExceptionWhenConvertBase64ImageToBufferedImageGivenInvalidImage" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -166,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PropertyPredictionBackEndApplication" />
         <item itemvalue="JUnit.All in PropertyPredictionBackEnd" />
         <item itemvalue="JUnit.SingletonProviderTests" />
         <item itemvalue="JUnit.ImageUtilsTests" />
         <item itemvalue="JUnit.ImageUtilsTests.testImageUtilsThrowsConvertBase64ImageToBufferedImageExceptionWhenConvertBase64ImageToBufferedImageGivenNullImage" />
-        <item itemvalue="JUnit.ImageUtilsTests.monitorThrowsNotBase64ImageExceptionWhenConvertBase64ImageToBufferedImageGivenInvalidImage" />
       </list>
     </recent_temporary>
   </component>
