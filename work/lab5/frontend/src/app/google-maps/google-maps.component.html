@@ -12,4 +12,10 @@
 <input type="text" id="yearsInTheFuture" name="yearsInTheFuture" #yearsInTheFuture>
 
 <button (click)="getMapImage()">Save image</button>
-<img src="" alt="" id="image">
+<br/>
+<br/>
+<img [src]="image" alt="Result image" id="image">
+<br/>
+<br/>
+<h1>Predicted price : </h1>
+<h1 [textContent]="price"></h1>
