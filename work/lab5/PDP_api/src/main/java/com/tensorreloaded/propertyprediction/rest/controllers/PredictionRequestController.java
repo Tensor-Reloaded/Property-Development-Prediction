@@ -18,6 +18,10 @@ public class PredictionRequestController {
     @RequestMapping(value = "/predictProperty", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     public PredictionResponse predictProperty(@RequestBody PredictionRequest predictionRequest) {
         out.println("Received predictionRequest: " + predictionRequest);
-        return new PredictionResponse(predictionRequest.getImage(), DEFAULT_FLOAT_VALUE);
+        return new PredictionResponse(
+                new ImageUtil().flipBase64image(
+                        predictionRequest.getImage()
+                ), DEFAULT_FLOAT_VALUE
+        );
     }
 }
