@@ -27,10 +27,13 @@ export class GoogleMapsComponent implements OnInit {
     streetViewControl: false,
     fullscreenControl: false,
   };
-  response!: string;
   @ViewChild(GoogleMap, { static: false }) map!: GoogleMap;
-  yearsInTheFuture!: number;
   @ViewChild('yearsInTheFuture', { static: true }) yearsInTheFutureElement: ElementRef;
+  yearsInTheFuture!: number;
+  response!: string;
+  image!: any;
+  price!: number;
+
 
   ngOnInit() {
     this.yearsInTheFuture = 0;
@@ -80,14 +83,22 @@ export class GoogleMapsComponent implements OnInit {
 
       this.http.post<JSON>('http://localhost:8080/api/predictDevelopment', jsonResponse).subscribe({
         next: data => {
-          console.log(data);
+          const response = JSON.parse(JSON.stringify(data));
+          const b64Image = response.image;
+          const predictedPrice = response.predictedPrice;
+          this.image = this.sanitizeImage(b64Image);
+          this.price = predictedPrice;
         },
         error: error => {
             console.error('There was an error!', error);
         }
-    });
+      });
+    }
+  )}
+  
+  sanitizeImage(image: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,' + image);
   }
-)}
   
 
   getRequest() {
