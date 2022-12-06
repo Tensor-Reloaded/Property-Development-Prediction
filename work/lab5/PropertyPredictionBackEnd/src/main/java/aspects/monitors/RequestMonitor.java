@@ -1,5 +1,6 @@
 package aspects.monitors;
 
+import com.example.propertypredictionbackend.network.model.Result;
 import com.example.propertypredictionbackend.utils.SingletonProvider;
 import com.example.propertypredictionbackend.dtos.PredictionRequest;
 import com.example.propertypredictionbackend.dtos.http.HttpPredictionRequest;
@@ -49,7 +50,7 @@ public class RequestMonitor {
         if (((HttpPredictionResponse) httpResponse).getPredictedPrice() < 0) {
             System.out.println("[RequestMonitor] Sending error to the client");
         }
-        System.out.println(httpResponse);
+        System.out.println("[RequestMonitor]" + (HttpPredictionResponse) httpResponse);
     }
 
 }

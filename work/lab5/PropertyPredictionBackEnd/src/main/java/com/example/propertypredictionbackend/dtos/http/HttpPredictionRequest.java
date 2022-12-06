@@ -19,4 +19,12 @@ public class HttpPredictionRequest implements Serializable {
     @Getter
     @Setter
     private int yearsInFuture;
+
+    @Override
+    public String toString() {
+        return "HttpPredictionRequest:[" +
+                "image: " + image + "," +
+                "httpCoordinate: " + coordinates + "," +
+                "yearsInFuture:" + yearsInFuture + "]";
+    }
 }

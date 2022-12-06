@@ -49,12 +49,12 @@ public class ImageUtilsTests {
         // Arrange
         ImageUtils imageUtils = SingletonProvider.getImageUtils();
 
-        String image = null;
+        String imageBase64 = null;
 
         try {
-            imageUtils.convertBase64ImageToBufferedImage(image);
+            imageUtils.convertBase64ImageToBufferedImage(imageBase64);
         } catch (ConvertBase64ImageToBufferedImageException exception) {
-            Assertions.assertEquals("Error when converting a base64 representation of image to BufferedImage. Actual exception: Null image.", exception.getMessage());
+            Assertions.assertEquals("Error when converting a base64 representation of image to BufferedImage. Actual exception: Null base64.", exception.getMessage());
             return;
         }
         // Assert

@@ -14,4 +14,12 @@ public class HttpCoordinates implements Serializable {
     @Setter
     @Getter
     private float longitude;
+
+    @Override
+    public String toString() {
+        return "Coordinates:[" +
+                "latitude:" + latitude +
+                "longitude:" + longitude +
+                "]";
+    }
 }

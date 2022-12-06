@@ -14,4 +14,11 @@ public class HttpPredictionResponse implements Serializable {
     @Setter
     @Getter
     private float predictedPrice;
+
+    @Override
+    public String toString() {
+        return "HttpPredictionResponse:[" +
+                "image: " + image + "," +
+                "predictedPrice:" + predictedPrice + "]";
+    }
 }

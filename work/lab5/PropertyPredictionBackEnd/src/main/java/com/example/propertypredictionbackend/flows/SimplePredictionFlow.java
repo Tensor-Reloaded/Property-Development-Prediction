@@ -55,7 +55,7 @@ public class SimplePredictionFlow extends PredictionFlow {
 //            throw ((ResultError<PredictionResponse>) receivedResult).getException();
             return new PredictionResponse.PredictionResponseBuilder()
                     .withImage(receivedResult.toString())
-                    .withPredictedPrice(-1)
+                    .withPredictedPrice(0)
                     .build();
         } else if (receivedResult instanceof ResultSuccess<String>) {
             out.println("Succeeded request");

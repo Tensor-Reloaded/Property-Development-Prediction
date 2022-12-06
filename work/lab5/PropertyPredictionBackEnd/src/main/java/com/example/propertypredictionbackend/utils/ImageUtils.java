@@ -38,6 +38,6 @@ public class ImageUtils {
                 throw new ConvertBase64ImageToBufferedImageException(e.getMessage());
             }
         }
-        throw new ConvertBase64ImageToBufferedImageException("Null image.");
+        throw new ConvertBase64ImageToBufferedImageException("Null base64.");
     }
 }
