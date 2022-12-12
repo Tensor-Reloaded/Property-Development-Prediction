@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce3c08d1-95bf-47ae-8589-5dfbd520f3cd" name="Changes" comment="Tried to implement AOP" />
+    <list default="true" id="ce3c08d1-95bf-47ae-8589-5dfbd520f3cd" name="Changes" comment="Removed unused test. Worked on improving the tests.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/flows/PatchesPredictionFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/RequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/preprocesors/ImageCropPreProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/preprocesors/ImageCropPreProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/utils/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/propertypredictionbackend/utils/ImageUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/propertypredictionbackend/preprocessors_tests/test_images/contrastImage.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/propertypredictionbackend/preprocessors_tests/test_images/crop_image_test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/propertypredictionbackend/preprocessors_tests/test_images/invalidTextImage.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/propertypredictionbackend/preprocessors_tests/test_images/new.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/propertypredictionbackend/preprocessors_tests/test_images/test_image.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/propertypredictionbackend/preprocessors_tests/test_images/textBase.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/google-maps/google-maps.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/google-maps/google-maps.component.ts" afterDir="false" />
+    </list>
+    <list id="b0954873-3b5d-4ce8-8db2-18ff28c06a7d" name="pain" comment="">
+      <change afterPath="$PROJECT_DIR$/../PDP_api/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDP_api/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDP_api/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.idea/PDP_api.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,18 +73,29 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Guguhc8Or3bESlPlv5k8Gq1qx0" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Adi/Desktop/Property-Development-Prediction-devel/work/lab5/PDP_api"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/Master/ASET/Property-Development-Prediction/work/lab5/PDP_api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;cac759eeb89030509c8f5b717bd77fd7&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\Master\ASET\PropertyPredictionBackEnd\src\main\java\com\example\propertypredictionbackend" />
@@ -78,20 +117,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.PropertyPredictionBackEndApplication">
-    <configuration name="PropertyPredictionBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.PropertyPredictionBackEndApplication" />
-      <module name="PropertyPredictionBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.propertypredictionbackend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.PropertyPredictionBackEndApplication">
     <configuration name="All in PropertyPredictionBackEnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PropertyPredictionBackEnd" />
       <option name="PACKAGE_NAME" value="" />
@@ -100,48 +126,66 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ImageUtilsTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PredictionRequestYearsInFutureAspect.testObtainingSingletonInstanceUsingAspects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PropertyPredictionBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.propertypredictionbackend.utils.SingletonProvider" />
+          <option name="PATTERN" value="com.example.propertypredictionbackend.requests_tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.propertypredictionbackend.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.utils.ImageUtilsTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ImageUtilsTests.testImageUtilsThrowsConvertBase64ImageToBufferedImageExceptionWhenConvertBase64ImageToBufferedImageGivenNullImage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PropertyPredictionBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.propertypredictionbackend.utils.SingletonProvider" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.propertypredictionbackend.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.utils.ImageUtilsTests" />
-      <option name="METHOD_NAME" value="testImageUtilsThrowsConvertBase64ImageToBufferedImageExceptionWhenConvertBase64ImageToBufferedImageGivenNullImage" />
+      <option name="PACKAGE_NAME" value="com.example.propertypredictionbackend.requests_tests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.requests_tests.PredictionRequestYearsInFutureAspect" />
+      <option name="METHOD_NAME" value="testObtainingSingletonInstanceUsingAspects" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SingletonProviderTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServerTests.testErrorInvalidURL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PropertyPredictionBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.propertypredictionbackend.utils.*" />
+          <option name="PATTERN" value="com.example.propertypredictionbackend.network_tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.propertypredictionbackend.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.utils.SingletonProviderTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.example.propertypredictionbackend.network_tests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.network_tests.ServerTests" />
+      <option name="METHOD_NAME" value="testErrorInvalidURL" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerTests.testFailedRequestToTheServer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PropertyPredictionBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.propertypredictionbackend.network_tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.propertypredictionbackend.network_tests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.network_tests.ServerTests" />
+      <option name="METHOD_NAME" value="testFailedRequestToTheServer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerTests.testSuccessRequestToTheServer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PropertyPredictionBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.propertypredictionbackend.network_tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.propertypredictionbackend.network_tests" />
+      <option name="MAIN_CLASS_NAME" value="com.example.propertypredictionbackend.network_tests.ServerTests" />
+      <option name="METHOD_NAME" value="testSuccessRequestToTheServer" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PropertyPredictionBackEndApplication" />
         <item itemvalue="JUnit.All in PropertyPredictionBackEnd" />
-        <item itemvalue="JUnit.SingletonProviderTests" />
-        <item itemvalue="JUnit.ImageUtilsTests" />
-        <item itemvalue="JUnit.ImageUtilsTests.testImageUtilsThrowsConvertBase64ImageToBufferedImageExceptionWhenConvertBase64ImageToBufferedImageGivenNullImage" />
+        <item itemvalue="JUnit.ServerTests.testErrorInvalidURL" />
+        <item itemvalue="JUnit.ServerTests.testFailedRequestToTheServer" />
+        <item itemvalue="JUnit.ServerTests.testSuccessRequestToTheServer" />
+        <item itemvalue="JUnit.PredictionRequestYearsInFutureAspect.testObtainingSingletonInstanceUsingAspects" />
       </list>
     </recent_temporary>
   </component>
@@ -181,6 +225,13 @@
       <workItem from="1667930164924" duration="8872000" />
       <workItem from="1669577121965" duration="4893000" />
       <workItem from="1669910351711" duration="1751000" />
+      <workItem from="1670347140982" duration="3546000" />
+      <workItem from="1670353413870" duration="4000" />
+      <workItem from="1670353460369" duration="698000" />
+      <workItem from="1670354672221" duration="399000" />
+      <workItem from="1670392556301" duration="1568000" />
+      <workItem from="1670679836660" duration="633000" />
+      <workItem from="1670872001334" duration="4624000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented contrast functionality.">
       <created>1667892472563</created>
@@ -203,7 +254,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667947071665</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implemented preprocessor for cropping the image.">
+      <created>1670274971088</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1670274971088</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Removed unused test. Worked on improving the tests.">
+      <created>1670350670674</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670350670674</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,18 +289,11 @@
     <MESSAGE value="Implemented contrast functionality." />
     <MESSAGE value="Implemented simple flow of processing the image.&#10;Configured project to run on AOP (Aspects Oriented Programming)." />
     <MESSAGE value="Updated project to have Swagger documentation.&#10;Also created AOP for ImagePreProcessorFactory." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated project to have Swagger documentation.&#10;Also created AOP for ImagePreProcessorFactory." />
+    <MESSAGE value="Implemented preprocessor for cropping the image." />
+    <MESSAGE value="Removed unused test. Worked on improving the tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unused test. Worked on improving the tests." />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/example/propertypredictionbackend/flow_tests/ControllerHandlingTests.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="(ImageContrastPreProcessor) context.getBean(&quot;contrastPreProcessor&quot;);" language="JAVA" />
@@ -243,11 +301,17 @@
       </configuration>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="(ImageContrastPreProcessor) context.getBean(&quot;contrastPreProcessor&quot;)" language="JAVA" />
+        <watch expression="convertedImageFromBase64.getHeight() - CROP_PIXELS" language="JAVA" />
+        <watch expression="convertedImageFromBase64.getHeight()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PropertyPredictionBackEnd$All_in_PropertyPredictionBackEnd.ic" NAME="All in PropertyPredictionBackEnd Coverage Results" MODIFIED="1670393686488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PropertyPredictionBackEnd$PropertyPredictionBackEndApplication.ic" NAME="PropertyPredictionBackEndApplication Coverage Results" MODIFIED="1670393662469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

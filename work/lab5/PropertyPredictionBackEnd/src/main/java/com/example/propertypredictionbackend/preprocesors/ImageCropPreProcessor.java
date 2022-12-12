@@ -15,7 +15,7 @@ public class ImageCropPreProcessor implements ImagePreProcessor {
     public void preProcessImage(RequestImageGetter requestImageGetter) throws ConvertBase64ImageToBufferedImageException {
         BufferedImage convertedImageFromBase64 = SingletonProvider.getImageUtils().convertBase64ImageToBufferedImage(requestImageGetter.getImage());
 
-        convertedImageFromBase64 = cropImage(convertedImageFromBase64, new Rectangle(convertedImageFromBase64.getWidth()
+        convertedImageFromBase64 = cropLowerPart(convertedImageFromBase64, new Rectangle(convertedImageFromBase64.getWidth()
                 , convertedImageFromBase64.getHeight() - CROP_PIXELS));
 
         String croppedImage = SingletonProvider.getImageUtils().convertBufferedImageToBase64Image(convertedImageFromBase64, FORMAT);
@@ -23,7 +23,7 @@ public class ImageCropPreProcessor implements ImagePreProcessor {
         requestImageGetter.setImage(croppedImage);
     }
 
-    private BufferedImage cropImage(BufferedImage src, Rectangle rect) {
+    private BufferedImage cropLowerPart(BufferedImage src, Rectangle rect) {
         BufferedImage dest = src.getSubimage(0, 0, rect.width, rect.height);
         return dest;
     }

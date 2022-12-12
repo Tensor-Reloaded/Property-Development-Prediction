@@ -19,7 +19,7 @@ export class GoogleMapsComponent implements OnInit {
   KEY = 'AIzaSyBjPxuX_hTYnBTDK-r3AETyOf8VRInmXJA';
   MAP_TYPE = 'satellite';
   SCALE = 1;
-  SIZE = '600x600';
+  SIZE = '448x473'; // 2 x 2 patches of 224
   zoom = 12;
   center!: google.maps.LatLngLiteral;
   mapOptions: google.maps.MapOptions = {

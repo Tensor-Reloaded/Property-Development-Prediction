@@ -3,6 +3,7 @@ package com.example.propertypredictionbackend;
 import com.example.propertypredictionbackend.dtos.*;
 import com.example.propertypredictionbackend.dtos.http.HttpPredictionRequest;
 import com.example.propertypredictionbackend.dtos.http.HttpPredictionResponse;
+import com.example.propertypredictionbackend.flows.PatchesPredictionFlow;
 import com.example.propertypredictionbackend.flows.PredictionFlow;
 import com.example.propertypredictionbackend.flows.SimplePredictionFlow;
 import com.example.propertypredictionbackend.preprocesors.ImagePreProcessor;
@@ -29,7 +30,7 @@ public class RequestController {
     private final URL imagePredictionModelURL;
     private final URL directImagePredictionModelURL;
     private final ImagePreProcessorFactory factory;
-    private final PredictionFlow predictionFlow;
+    private PredictionFlow predictionFlow;
 
     public RequestController() {
         try (InputStream fileStream = getClass().getClassLoader().getResourceAsStream("static/string_constants.properties")) {
@@ -43,6 +44,7 @@ public class RequestController {
             throw new RuntimeException(e);
         }
     }
+
     @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/predictDevelopment",
             method = RequestMethod.POST,
@@ -52,6 +54,8 @@ public class RequestController {
         PredictionRequest request = mapHttpPredictionRequestToPredictionRequest(httpRequest);
 
         RequestImageGetter adapter = new RequestPredictionProxy(request);
+
+        predictionFlow = new PatchesPredictionFlow();
 
         predictionFlow.adaptPredictionImage(adapter);
 

@@ -5,6 +5,7 @@ import com.example.propertypredictionbackend.exceptions.ConvertBufferedImageToBa
 import org.springframework.context.annotation.Bean;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -25,7 +26,7 @@ public class ImageUtils {
 
     public BufferedImage convertBase64ImageToBufferedImage(String base64Image) {
 
-        if(base64Image != null) {
+        if (base64Image != null) {
             BufferedImage image;
             byte[] imageByte = javax.xml.bind.DatatypeConverter.parseBase64Binary(base64Image);
             try (ByteArrayInputStream imageByteStream = new ByteArrayInputStream(imageByte)) {
@@ -39,5 +40,9 @@ public class ImageUtils {
             }
         }
         throw new ConvertBase64ImageToBufferedImageException("Null base64.");
+    }
+
+    public BufferedImage cropImage(BufferedImage image, int x, int y, int width, int height) {
+        return image.getSubimage(x, y, width, height);
     }
 }
