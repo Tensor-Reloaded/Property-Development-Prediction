@@ -1,21 +1,21 @@
-<google-map 
-    height="473px"
-    width="448px"
-    id="map"
-    [options]="mapOptions"
-    [center]="center"
-    [zoom]="zoom"
-    >
-</google-map>
-<br>
-<label for="years">Years in the future : </label>
-<input type="text" id="yearsInTheFuture" name="yearsInTheFuture" #yearsInTheFuture>
+<div class="card d-flex flex-column bg-gradient-light">
+    <div class="mx-auto">
+        <google-map height="768px" width="768px" id="map" [options]="mapOptions" [center]="center"[zoom]="zoom"></google-map><br>
+    </div>
 
-<button (click)="getMapImage()">Save image</button>
-<br/>
-<br/>
-<img [src]="image" alt="Result image" id="image">
-<br/>
-<br/>
-<h1>Predicted price : </h1>
-<h1 [textContent]="price"></h1>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Years in the future</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Years in the future" aria-describedby="basic-addon1" id="yearsInTheFuture" name="yearsInTheFuture" #yearsInTheFuture>
+    </div>
+
+
+    <button (click)="getMapImage()" class="btn btn-primary">Save image</button>
+
+    <div class="mx-auto">
+        <img [src]="image" id="image"> <br /> <br />
+        <h3>Predicted price : </h3>
+        <h3 [textContent]="price"></h3>
+    </div>
+</div>
