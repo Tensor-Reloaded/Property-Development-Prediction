@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-list_batches = [5, 10, 20, 40, 80, 160, 320]
+list_batches = [5, 10, 20, 40, 80, 160, 320, 1000]
 
 
 def draw_plot(batch_size, offset_percentage):
@@ -19,6 +19,5 @@ def draw_plot(batch_size, offset_percentage):
     plt.title("Requests count " + str(batch_size))
     plt.show()
 
-
 for batch_size in list_batches:
-    draw_plot(batch_size=batch_size, offset_percentage=7)
+    draw_plot(batch_size=batch_size, offset_percentage=1)

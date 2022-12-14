@@ -42,19 +42,22 @@ def make_request(id_thread):
             "yearsInFuture": 0
         })
         end = int(time.time()*1000)
-        print(str(id_thread) + " response code: " + str(response.status_code) + " and time " +  str(end - start) + " milliseconds")
+        print(str(id_thread) + " response code: " + str(response.status_code) +
+              " and time " + str(end - start) + " milliseconds")
     except:
         end = int(time.time()*1000)
-        print(str(id_thread)+" finished with error in " +  str(end - start) + " milliseconds")
+        print(str(id_thread)+" finished with error in " +
+              str(end - start) + " milliseconds")
     list_times.append(end-start)
 
 
 def write_data(batch_size):
     global list_times
     list_times.sort()
-    with open(str(batch_size)+".txt","a") as writer:
+    with open(str(batch_size)+".txt", "a") as writer:
         for value in list_times:
             writer.write(str(value) + " ")
+
 
 def simultan_request(count_requests):
     global list_times
@@ -72,8 +75,6 @@ def simultan_request(count_requests):
     write_data(count_requests)
 
 
-
-
 simultan_request(5)
 simultan_request(10)
 simultan_request(20)
@@ -81,3 +82,4 @@ simultan_request(40)
 simultan_request(80)
 simultan_request(160)
 simultan_request(320)
+simultan_request(1000)
