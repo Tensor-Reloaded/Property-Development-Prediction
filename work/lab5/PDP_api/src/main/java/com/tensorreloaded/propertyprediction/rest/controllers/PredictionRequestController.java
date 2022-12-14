@@ -1,5 +1,6 @@
 package com.tensorreloaded.propertyprediction.rest.controllers;
 
+import com.tensorreloaded.propertyprediction.model.ModelUsage;
 import com.tensorreloaded.propertyprediction.rest.model.PredictionRequest;
 import com.tensorreloaded.propertyprediction.rest.model.PredictionResponse;
 import org.apache.tomcat.util.json.JSONParser;
@@ -18,6 +19,7 @@ public class PredictionRequestController {
     @RequestMapping(value = "/predictProperty", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     public PredictionResponse predictProperty(@RequestBody PredictionRequest predictionRequest) {
         out.println("Received predictionRequest: " + predictionRequest);
+        (new ModelUsage()).predict(predictionRequest.getImage());
         return new PredictionResponse(
                 new ImageUtil().flipBase64image(
                         predictionRequest.getImage()
