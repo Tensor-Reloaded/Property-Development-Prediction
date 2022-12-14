@@ -22,8 +22,14 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
     // swagger
-    compileOnly 'io.springfox:springfox-swagger-ui:2.6.1'
-    compileOnly 'io.springfox:springfox-swagger2:2.6.1'
+    implementation 'io.springfox:springfox-swagger2:2.7.0'
+    implementation 'io.springfox:springfox-swagger-ui:2.7.0'
+
+    //pytorch
+    implementation "ai.djl:api:0.4.0"
+    implementation "ai.djl:repository:0.4.0"
+    runtimeOnly "ai.djl.pytorch:pytorch-model-zoo:0.4.0"
+    runtimeOnly "ai.djl.pytorch:pytorch-native-auto:1.4.0"
 }
 
 tasks.named('test') {
