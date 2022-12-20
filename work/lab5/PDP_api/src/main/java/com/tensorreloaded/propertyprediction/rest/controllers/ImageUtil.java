@@ -9,7 +9,7 @@ import java.io.ByteArrayOutputStream;
 import java.util.Base64;
 
 public class ImageUtil {
-    String flipBase64image(String imageB64) {
+    public String flipBase64image(String imageB64) {
         try {
             byte[] byteImage = Base64.getDecoder().decode(imageB64);
             var bais = new ByteArrayInputStream(byteImage);
