@@ -20,7 +20,7 @@ public class PredictionRequestController {
     public PredictionResponse predictProperty(@RequestBody PredictionRequest predictionRequest) {
         out.println("Received predictionRequest: " + predictionRequest);
         return new PredictionResponse(
-                        (new ModelUsage()).predict(predictionRequest.getImage()),
+                (new ModelUsage()).predict(predictionRequest.getImage(), predictionRequest.getYearsInFuture()),
                 DEFAULT_FLOAT_VALUE
         );
     }
