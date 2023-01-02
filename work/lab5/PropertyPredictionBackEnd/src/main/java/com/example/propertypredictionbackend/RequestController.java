@@ -30,7 +30,7 @@ public class RequestController {
     private final URL imagePredictionModelURL;
     private final URL directImagePredictionModelURL;
     private final ImagePreProcessorFactory factory;
-    private PredictionFlow predictionFlow;
+    private final PredictionFlow predictionFlow;
 
     public RequestController() {
         try (InputStream fileStream = getClass().getClassLoader().getResourceAsStream("static/string_constants.properties")) {
@@ -54,8 +54,6 @@ public class RequestController {
         PredictionRequest request = mapHttpPredictionRequestToPredictionRequest(httpRequest);
 
         RequestImageGetter adapter = new RequestPredictionProxy(request);
-
-        predictionFlow = new PatchesPredictionFlow();
 
         predictionFlow.adaptPredictionImage(adapter);
 
