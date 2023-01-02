@@ -4,15 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce3c08d1-95bf-47ae-8589-5dfbd520f3cd" name="Changes" comment="Re-added deleted images">
+    <list default="true" id="ce3c08d1-95bf-47ae-8589-5dfbd520f3cd" name="Changes" comment="Selected simple flow for prediction (no image processing beside google crop)">
+      <change afterPath="$PROJECT_DIR$/../PDP_api/.idea/modules/propertyprediction.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDP_api/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDP_api/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/.gradle/file-system.probe" afterDir="false" />
-    </list>
-    <list id="b0954873-3b5d-4ce8-8db2-18ff28c06a7d" name="pain" comment="">
+      <change beforePath="$PROJECT_DIR$/../PDP_api/src/main/resources/Model/base64.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../PDP_api/src/main/resources/Model/base64.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/angular.json" afterDir="false" />
     </list>
+    <list id="b0954873-3b5d-4ce8-8db2-18ff28c06a7d" name="pain" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -211,7 +220,11 @@
       <workItem from="1670354672221" duration="399000" />
       <workItem from="1670392556301" duration="1568000" />
       <workItem from="1670679836660" duration="633000" />
-      <workItem from="1670872001334" duration="8622000" />
+      <workItem from="1670872001334" duration="12370000" />
+      <workItem from="1671559495529" duration="4995000" />
+      <workItem from="1671602190817" duration="673000" />
+      <workItem from="1672653811299" duration="5212000" />
+      <workItem from="1672686386576" duration="1527000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented contrast functionality.">
       <created>1667892472563</created>
@@ -255,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670919009317</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Selected simple flow for prediction (no image processing beside google crop)">
+      <created>1672680623450</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1672680623450</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +299,9 @@
     <MESSAGE value="Implemented preprocessor for cropping the image." />
     <MESSAGE value="Removed unused test. Worked on improving the tests." />
     <MESSAGE value="Re-added deleted images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re-added deleted images" />
+    <MESSAGE value="Selected simple flow for prediction (no image)" />
+    <MESSAGE value="Selected simple flow for prediction (no image processing beside google crop)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Selected simple flow for prediction (no image processing beside google crop)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
