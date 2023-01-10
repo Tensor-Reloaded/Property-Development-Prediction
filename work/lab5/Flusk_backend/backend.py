@@ -40,28 +40,29 @@ def predictImage(imageString, yearsInFuture):
     height_index = image.height // patch_size
     new_image = Image.new(mode="RGB", size=image.size)
     
+    seasons = np.array([-1, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 0, 0])
+    current_season = seasons[(int(str(datetime.date.today())[5:7]) + time_skip_index) % 12 + 1]
     for index_w in range(width_index + 1):
         for index_h in range(height_index + 1):
-            cut_point_x = index_w * patch_size
+	    cut_point_x = index_w * patch_size
             cut_point_y = index_h * patch_size
-            image_crop = image.crop((cut_point_x,
-                                    cut_point_y,
-                                    cut_point_x + patch_size,
+            image_crop = image.crop((cut_point_x, 
+                                    cut_point_y, 
+                                    cut_point_x + patch_size, 
                                     cut_point_y + patch_size))
             image_crop = np.array(Image.fromarray(np.array(image_crop), 'RGB'))
-
             image_crop = torch.Tensor(image_crop.reshape(1, 3, 32, 32))
-            transform = transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+            transform = transforms.Normalize((78.1719, 106.2079, 121.0767), (44.5890, 48.2923, 60.3073))
             image_crop = transform(image_crop)
 
-            time_skip = torch.Tensor([yearsInFuture]).to(device)
+            time_skip = torch.Tensor([time_skip_index]).to(device)
             image_crop = image_crop.to(device)
+            season = torch.Tensor([current_season]).to(device)
 
             with torch.no_grad():
-                pred = model(image_crop, time_skip)
+                pred = model(image_crop, time_skip, season)
 
-            pred = pred.detach().cpu().numpy().reshape((32, 32, 3, 1)).squeeze()
-            img = Image.fromarray(pred, 'RGB')
+            img = transforms.ToPILImage()(pred.squeeze(0))
             new_image.paste(img, (cut_point_x, cut_point_y))
 
     buffered = BytesIO()
