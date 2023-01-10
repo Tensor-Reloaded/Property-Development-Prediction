@@ -99,15 +99,14 @@ class Decoder(nn.Module):
 #         for i in range(0, len(self.layers_lin)):
 #             x = self.layers_lin[i](x)
 #             #print(f"{i} : {x.shape}")
+        
+        x = self.decoder_lin(x)
+        x = self.unflatten(x)
         #print(f"Shape after unflatten: {x.shape}")
         
 #         for i in range(0, len(self.layers_cnn)):
 #             x = self.layers_cnn[i](x)
 #             #print(f"{i} : {x.shape}")
-        
-        
-        x = self.decoder_lin(x)
-        x = self.unflatten(x)
         x = self.decoder_conv(x)
         x = torch.sigmoid(x)
         return x
@@ -117,13 +116,14 @@ class AE(nn.Module):
     def __init__(self):
         super(AE, self).__init__()
         self.temporal_embedding = nn.Parameter(torch.rand(1, 3, 32, 32))
+        self.season_embedding = nn.Parameter(torch.rand(1, 3, 32, 32))
         self.encoder = Encoder(32*32*3, 128)
         self.decoder = Decoder(32*32*3, 128)
 
-    def forward(self, x, time_skip):
-        time_skip_vector = torch.einsum('i, iabc->iabc', time_skip, self.temporal_embedding.repeat(time_skip.size(0), 1, 1, 1))
-        x = x + time_skip_vector
+    def forward(self, x, time_skip, season):
         x = self.encoder(x)
-        # x = x + time_skip_vector
+        time_skip_vector = torch.einsum('i, iabc->iabc', time_skip, self.temporal_embedding.repeat(time_skip.size(0), 1, 1, 1)).view(-1, 3072)
+        season_variable = torch.einsum('i, iabc->iabc', season, self.season_embedding.repeat(season.size(0), 1, 1, 1)).view(-1, 3072)
+        x = x + time_skip_vector + season_variable
         x = self.decoder(x)
         return x

@@ -28,7 +28,7 @@ def predictImage(imageString, yearsInFuture):
     device = 'cpu'
     model = AE().to(device)
     model.load_state_dict(torch.load(
-        r'model_weightsM_20.pth',
+        r'M7.pth',
         map_location=torch.device('cpu')))
     model.eval()
 
