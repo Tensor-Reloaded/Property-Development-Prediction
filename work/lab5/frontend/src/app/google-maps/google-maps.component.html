@@ -5,17 +5,15 @@
 
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Years in the future</span>
+            <span class="input-group-text" id="basic-addon1">Months in the future</span>
         </div>
         <input type="text" class="form-control" aria-label="Years in the future" aria-describedby="basic-addon1" id="yearsInTheFuture" name="yearsInTheFuture" #yearsInTheFuture>
     </div>
 
 
-    <button (click)="getMapImage()" class="btn btn-primary">Save image</button>
+    <button (click)="getMapImage()" class="btn btn-primary">Get prediction result</button>
 
     <div class="mx-auto">
         <img [src]="image" id="image"> <br /> <br />
-        <h3>Predicted price : </h3>
-        <h3 [textContent]="price"></h3>
     </div>
 </div>

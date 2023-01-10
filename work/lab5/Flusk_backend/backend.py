@@ -7,6 +7,7 @@ import torchvision.transforms as transforms
 from PIL import Image, ImageFile
 import sys
 from io import BytesIO
+import datetime
 
 from model import AE
 
@@ -41,7 +42,7 @@ def predictImage(imageString, yearsInFuture):
     new_image = Image.new(mode="RGB", size=image.size)
     
     seasons = np.array([-1, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 0, 0])
-    current_season = seasons[(int(str(datetime.date.today())[5:7]) + time_skip_index) % 12 + 1]
+    current_season = seasons[(int(str(datetime.date.today())[5:7]) + yearsInFuture) % 12 + 1]
     for index_w in range(width_index + 1):
         for index_h in range(height_index + 1):
             cut_point_x = index_w * patch_size
@@ -55,7 +56,7 @@ def predictImage(imageString, yearsInFuture):
             transform = transforms.Normalize((78.1719, 106.2079, 121.0767), (44.5890, 48.2923, 60.3073))
             image_crop = transform(image_crop)
 
-            time_skip = torch.Tensor([time_skip_index]).to(device)
+            time_skip = torch.Tensor([yearsInFuture]).to(device)
             image_crop = image_crop.to(device)
             season = torch.Tensor([current_season]).to(device)
 
