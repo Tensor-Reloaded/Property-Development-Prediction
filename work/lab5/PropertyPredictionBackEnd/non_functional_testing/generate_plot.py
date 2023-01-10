@@ -1,23 +1,49 @@
 import matplotlib.pyplot as plt
 
-list_batches = [5, 10, 20, 40, 80, 160, 320, 1000]
+list_batches = [x for x in range(100,320,20)]
 
+min_data = []
+max_data = []
+avg_data = []
 
-def draw_plot(batch_size, offset_percentage):
+def read_data_from_file(batch_size, offset_percentage):
     list_times = []
     offset = int(batch_size*offset_percentage/100)
     if offset == 0:
         offset = 1
     with open(str(batch_size) + ".txt", "r") as reader:
         list_read = reader.read().split(" ")
-        list_read.pop()
-        list_times = list_read
-    print(list_times)
-    plt.plot([i*offset for i in range(0, int(len(list_times)/offset))],
-             [list_times[i*offset] for i in range(0, int(len(list_times)/offset))], "ro")
-    plt.ylabel('Times (milliseconds)')
-    plt.title("Requests count " + str(batch_size))
-    plt.show()
+        max_data.append(int(list_read[0]))
+        min_data.append(int(list_read[1]))
+        avg_data.append(int(list_read[2]))
 
 for batch_size in list_batches:
-    draw_plot(batch_size=batch_size, offset_percentage=1)
+    read_data_from_file(batch_size=batch_size, offset_percentage=1)
+
+plt.plot(list_batches,max_data,marker="o",linestyle="--")
+plt.xticks(list_batches,list_batches)
+plt.xticks(rotation=90)
+plt.yticks(max_data,max_data)
+plt.legend(handletextpad=0.1)
+plt.ylabel('Times (milliseconds)')
+plt.title("Requests count - Maximum")
+plt.gcf().autofmt_xdate()
+plt.show()
+
+
+plt.plot(list_batches,min_data,marker="o",linestyle="--")
+plt.xticks(list_batches,list_batches)
+plt.xticks(rotation=90)
+plt.yticks(min_data,min_data)
+plt.ylabel('Times (milliseconds)')
+plt.title("Requests count - Minimum")
+plt.show()
+
+
+plt.plot(list_batches,avg_data,marker="o",linestyle="--")
+plt.xticks(list_batches,list_batches)
+plt.xticks(rotation=90)
+plt.yticks(avg_data,avg_data)
+plt.ylabel('Times (milliseconds)')
+plt.title("Requests count - Average")
+plt.show()

@@ -1,6 +1,5 @@
 import threading
 import requests
-import jsonpickle
 import time
 
 
@@ -46,17 +45,15 @@ def make_request(id_thread):
               " and time " + str(end - start) + " milliseconds")
     except:
         end = int(time.time()*1000)
-        print(str(id_thread)+" finished with error in " +
-              str(end - start) + " milliseconds")
+        # print(str(id_thread)+" finished with error in " +
+        #       str(end - start) + " milliseconds")
     list_times.append(end-start)
 
 
 def write_data(batch_size):
     global list_times
-    list_times.sort()
-    with open(str(batch_size)+".txt", "a") as writer:
-        for value in list_times:
-            writer.write(str(value) + " ")
+    with open(str(batch_size)+".txt", "w") as writer:
+        writer.write(str(max(list_times)) + " " + str(min(list_times)) + " " + str(int(sum(list_times)/len(list_times))))
 
 
 def simultan_request(count_requests):
@@ -74,12 +71,5 @@ def simultan_request(count_requests):
 
     write_data(count_requests)
 
-
-simultan_request(5)
-simultan_request(10)
-simultan_request(20)
-simultan_request(40)
-simultan_request(80)
-simultan_request(160)
-simultan_request(320)
-simultan_request(1000)
+for x in range(100,320,20):
+    simultan_request(x)
