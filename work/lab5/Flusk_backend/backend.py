@@ -44,7 +44,7 @@ def predictImage(imageString, yearsInFuture):
     current_season = seasons[(int(str(datetime.date.today())[5:7]) + time_skip_index) % 12 + 1]
     for index_w in range(width_index + 1):
         for index_h in range(height_index + 1):
-	    cut_point_x = index_w * patch_size
+            cut_point_x = index_w * patch_size
             cut_point_y = index_h * patch_size
             image_crop = image.crop((cut_point_x, 
                                     cut_point_y, 
