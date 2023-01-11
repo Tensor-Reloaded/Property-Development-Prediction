@@ -11,6 +11,8 @@ Using historical Geographic data from satellites, general financial information 
  * Pânzariu Adrian - panzariu.adi00@gmail.com
  * Huțu Alexandru - alexandru.hutu1@gmail.com
  
+Technical report: https://docs.google.com/document/d/1z9aWwAFW6ElAHUcVkS-UekustOEynG0YEEFZZSwHplE/edit#
+ 
 ## 2. Work 
 
 [Documentation](/work/documents.txt)
