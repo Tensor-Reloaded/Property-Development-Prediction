@@ -1,0 +1,5 @@
+# @package loss
+
+ImageGeneration:
+  loss_weights: [1,2,4,1,1] # VGG-Perceptual, MSE, MAE, VGG-TV, MS-SSIM
+  device: cpu

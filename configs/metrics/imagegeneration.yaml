@@ -1,0 +1,9 @@
+# @package metrics
+
+
+ImageGeneration:
+  parameters:
+    loss_weights: [1,2,4,1,1] # VGG-Perceptual, MSE, MAE, VGG-TV, MS-SSIM
+  aggregator: 'mean'
+  levels: ['batch', 'epoch']
+  higher_is_better: False

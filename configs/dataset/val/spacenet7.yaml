@@ -1,0 +1,30 @@
+# @package dataset
+
+name: "SpaceNet7Dataset"
+
+load_params:
+  root: "${storage_dir}/spacenet7/SN7_buildings_train_sample/sample"
+save_in_memory: false
+
+shuffle: false
+batch_size: 1
+num_workers: 0
+pin_memory: true
+drop_last: true
+
+subset: 0.0
+
+transform: val/spacenet7
+
+# mixup_args:
+#  mixup_alpha: 0.0
+#  cutmix_alpha: 1.0
+#  cutmix_minmax:
+#  prob: 1.0
+#  switch_prob: 0.0
+#  mode: 'batch'
+#  label_smoothing: 0.1
+#  num_classes: 5
+
+
+

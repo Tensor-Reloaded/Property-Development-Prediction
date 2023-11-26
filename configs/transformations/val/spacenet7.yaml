@@ -1,0 +1,7 @@
+# @package transformations
+
+ImageResize:
+  size: [224, 224]
+  apply_to: 
+
+

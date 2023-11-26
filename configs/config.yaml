@@ -1,0 +1,28 @@
+defaults:
+  - _self_
+  - common: default
+  - dataset/train@train_dataset: spacenet7
+  - dataset/val@val_dataset: spacenet7
+  - optional hyperparameters:
+  - initializer: default
+  - loss: imagegeneration
+  - metrics@train_metrics: [imagegeneration]
+  - metrics@val_metrics: [imagegeneration]
+  - metrics@solver_metrics: [solver]
+  - model: SimpleViT
+  - optimizer: adamw
+  - scheduler: StaticScheduler
+  - override hydra/sweeper: basic   # nevergrad | basic
+  - override hydra/launcher: basic
+
+restart_from_backup: False  # TODO: Use restart from backup everywhere
+
+aux_save_dir: 'baseline'
+storage_dir: "${oc.env:TENSOR_RELOADED_DATADIR}"
+save_dir: "${train_dataset.name}/${model.name}/${aux_save_dir}/${seed}"
+
+load_model: ""
+load_optimizer: ""
+load_training_state: ""
+
+infer_only: False

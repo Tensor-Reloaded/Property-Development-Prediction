@@ -1,0 +1,20 @@
+# @package transformations
+
+ImageResize:
+  size: [320, 320]
+  apply_to: 
+
+
+
+ImageRandomResizedCrop:
+  size: 256
+  scale: [0.5, 1.0]
+  apply_to: 
+
+
+ImageRandomHorizontalFlip:
+  apply_to: 
+
+ImageRandomRotation:
+  degrees: 15
+  apply_to: 

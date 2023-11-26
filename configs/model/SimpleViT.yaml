@@ -1,0 +1,12 @@
+# @package model
+
+name: SimpleViT
+parameters:
+  image_size: 256
+  patch_size: 32
+  dim: 256
+  depth: 4
+  heads: 2
+  mlp_dim: 512
+  encoding_size: 8
+  time_skip_granularity: 10
